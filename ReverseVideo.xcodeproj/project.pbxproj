@@ -24,8 +24,8 @@
 		FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937E25DED85F009F1127 /* Assets.xcassets */; };
 		FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938125DED85F009F1127 /* AppDelegate.swift */; };
 		FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938225DED85F009F1127 /* SceneDelegate.swift */; };
-		FA4D938C25DED86E009F1127 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938A25DED86E009F1127 /* HomeViewController.swift */; };
-		FA4D938D25DED86E009F1127 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938B25DED86E009F1127 /* EditorViewController.swift */; };
+		FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939425DED96E009F1127 /* HomeViewController.swift */; };
+		FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939525DED96E009F1127 /* EditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,8 @@
 		FA4D938025DED85F009F1127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4D938125DED85F009F1127 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA4D938225DED85F009F1127 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA4D938A25DED86E009F1127 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FA4D938B25DED86E009F1127 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		FA4D939425DED96E009F1127 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FA4D939525DED96E009F1127 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		FA153A9625DEC6D7006856F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D938925DED86E009F1127 /* ViewControllers */,
+				FA4D939325DED96E009F1127 /* ViewControllers */,
 				FA03671A25DED3F70073704D /* Cells */,
 				FA03671425DED3F10073704D /* Custom Views */,
 			);
@@ -169,11 +169,11 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		FA4D938925DED86E009F1127 /* ViewControllers */ = {
+		FA4D939325DED96E009F1127 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D938A25DED86E009F1127 /* HomeViewController.swift */,
-				FA4D938B25DED86E009F1127 /* EditorViewController.swift */,
+				FA4D939425DED96E009F1127 /* HomeViewController.swift */,
+				FA4D939525DED96E009F1127 /* EditorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,16 +254,16 @@
 				FA03672A25DED4D90073704D /* VideoGeneratorError.swift in Sources */,
 				FA4D937A25DED853009F1127 /* AppDelegate.swift in Sources */,
 				FA4D937B25DED853009F1127 /* SceneDelegate.swift in Sources */,
+				FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */,
 				FA03671E25DED3F70073704D /* speedCollectionViewCell.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
 				FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */,
 				FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */,
 				FA03673225DED4E30073704D /* UIImage+Ext.swift in Sources */,
-				FA4D938C25DED86E009F1127 /* HomeViewController.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
+				FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */,
 				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
-				FA4D938D25DED86E009F1127 /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
