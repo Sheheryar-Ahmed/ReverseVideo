@@ -9,6 +9,11 @@
 import UIKit
 
 extension UIImage {
+    
+    // MARK: - Properties
+    class var doneIcon: UIImage? {
+        return UIImage(named: "done")
+    }
   
   /// Method to scale an image to the given size while keeping the aspect ratio
   ///

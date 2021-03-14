@@ -14,6 +14,10 @@ extension UIColor {
         return fromHex("F15922")
     }
     
+    class var rvGray: UIColor? {
+        return fromHex("#424242")
+    }
+    
     // MARK: - Helper Methods
     class func fromHex(_ hex: String) -> UIColor {
         var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

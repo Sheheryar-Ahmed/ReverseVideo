@@ -143,6 +143,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2f-xa-6ku" customClass="CircularButton" customModule="ReverseVideo" customModuleProvider="target">
+                                <rect key="frame" x="364" y="64" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7d5-Oi-jEJ"/>
+                                    <constraint firstAttribute="width" constant="30" id="vfu-iI-fsK"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="arrow.down" catalog="system" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="exportButtonTapped" destination="poc-M7-Klr" eventType="touchUpInside" id="cDn-y0-8TT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmn-Km-u3J" customClass="CircularButton" customModule="ReverseVideo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GIj-9h-LSS"/>
+                                    <constraint firstAttribute="width" constant="30" id="YS1-4R-AFX"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="chevron.left" catalog="system" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped" destination="poc-M7-Klr" eventType="touchUpInside" id="okq-1v-SvW"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0C1-sC-35f">
                                 <rect key="frame" x="0.0" y="696" width="414" height="100"/>
                                 <subviews>
@@ -226,10 +256,14 @@
                             <constraint firstItem="rjS-Eh-oic" firstAttribute="top" secondItem="EE3-GM-6Yi" secondAttribute="top" id="Ckv-1a-RuA"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="KUe-Ta-996" secondAttribute="trailing" id="F4g-6S-Uyo"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="0C1-sC-35f" secondAttribute="trailing" id="HxB-ym-8Lz"/>
+                            <constraint firstItem="Cmn-Km-u3J" firstAttribute="leading" secondItem="fpi-3I-v0d" secondAttribute="leading" constant="20" id="UfH-6e-6jA"/>
                             <constraint firstItem="KUe-Ta-996" firstAttribute="leading" secondItem="fpi-3I-v0d" secondAttribute="leading" id="bQe-W1-dhA"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="rjS-Eh-oic" secondAttribute="trailing" id="bW0-sM-7hM"/>
+                            <constraint firstItem="c2f-xa-6ku" firstAttribute="top" secondItem="fpi-3I-v0d" secondAttribute="top" constant="20" id="iSh-Z2-BOf"/>
                             <constraint firstItem="rjS-Eh-oic" firstAttribute="leading" secondItem="fpi-3I-v0d" secondAttribute="leading" id="j5x-1U-yJr"/>
+                            <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="c2f-xa-6ku" secondAttribute="trailing" constant="20" id="oK3-Ct-NTU"/>
                             <constraint firstItem="0C1-sC-35f" firstAttribute="top" secondItem="rjS-Eh-oic" secondAttribute="bottom" constant="10" id="pH4-m8-SHw"/>
+                            <constraint firstItem="Cmn-Km-u3J" firstAttribute="top" secondItem="fpi-3I-v0d" secondAttribute="top" constant="20" id="v6C-B5-CRg"/>
                             <constraint firstItem="KUe-Ta-996" firstAttribute="top" secondItem="0C1-sC-35f" secondAttribute="bottom" id="x8G-Di-LWu"/>
                         </constraints>
                     </view>
@@ -245,7 +279,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="iconWithText" width="1025" height="1024"/>
         <systemColor name="systemBackgroundColor">

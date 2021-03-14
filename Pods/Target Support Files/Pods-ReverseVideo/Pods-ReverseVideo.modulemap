@@ -1,0 +1,6 @@
+framework module Pods_ReverseVideo {
+  umbrella header "Pods-ReverseVideo-umbrella.h"
+
+  export *
+  module * { export * }
+}

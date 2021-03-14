@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6C325F6701DAE529B04C128 /* Pods_ReverseVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */; };
 		FA03670025DED2DE0073704D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39B55925D17CF900DB7D54 /* Main.storyboard */; };
 		FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671525DED3F10073704D /* CustomPickerView.swift */; };
 		FA03671825DED3F20073704D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671625DED3F10073704D /* ButtonView.swift */; };
@@ -18,9 +19,9 @@
 		FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03672F25DED4E30073704D /* UIColor+Ext.swift */; };
 		FA03673425DED4E30073704D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03673025DED4E30073704D /* UIViewController+Ext.swift */; };
 		FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03673125DED4E30073704D /* UIView+Ext.swift */; };
-		FA4D937925DED853009F1127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937425DED853009F1127 /* LaunchScreen.storyboard */; };
-		FA4D937A25DED853009F1127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D937625DED853009F1127 /* AppDelegate.swift */; };
-		FA4D937B25DED853009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D937725DED853009F1127 /* SceneDelegate.swift */; };
+		FA3CD57425F8E0E900A3AF25 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */; };
+		FA3CD58825FBD85B00A3AF25 /* RVAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */; };
+		FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD58B25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift */; };
 		FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937E25DED85F009F1127 /* Assets.xcassets */; };
 		FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938125DED85F009F1127 /* AppDelegate.swift */; };
 		FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938225DED85F009F1127 /* SceneDelegate.swift */; };
@@ -29,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.release.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.release.xcconfig"; sourceTree = "<group>"; };
+		E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.debug.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.debug.xcconfig"; sourceTree = "<group>"; };
+		EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA03671525DED3F10073704D /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		FA03671625DED3F10073704D /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FA03671B25DED3F70073704D /* speedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = speedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -42,10 +46,9 @@
 		FA39B55025D17CF900DB7D54 /* ReverseVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA39B55A25D17CF900DB7D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA39B56125D17CFD00DB7D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA4D937325DED853009F1127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA4D937525DED853009F1127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FA4D937625DED853009F1127 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA4D937725DED853009F1127 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
+		FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVAlertViewController.swift; sourceTree = "<group>"; };
+		FA3CD58B25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		FA4D937E25DED85F009F1127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4D938025DED85F009F1127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4D938125DED85F009F1127 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,17 +62,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C325F6701DAE529B04C128 /* Pods_ReverseVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		325DD9C767E3E94923E632C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */,
+				24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F8F32FE4228997C2FF19478 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA03671425DED3F10073704D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				FA03671525DED3F10073704D /* CustomPickerView.swift */,
 				FA03671625DED3F10073704D /* ButtonView.swift */,
+				FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */,
 			);
 			name = "Custom Views";
 			path = "ReverseVideo/Views/Custom Views";
@@ -88,9 +111,9 @@
 		FA03672625DED4D80073704D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D937225DED853009F1127 /* Support */,
 				FA03672725DED4D80073704D /* VideoGenerator.swift */,
 				FA03672825DED4D80073704D /* VideoGeneratorError.swift */,
+				FA3CD58B25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -122,6 +145,8 @@
 			children = (
 				FA39B55225D17CF900DB7D54 /* ReverseVideo */,
 				FA39B55125D17CF900DB7D54 /* Products */,
+				325DD9C767E3E94923E632C4 /* Pods */,
+				8F8F32FE4228997C2FF19478 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,18 +171,6 @@
 			path = ReverseVideo;
 			sourceTree = "<group>";
 		};
-		FA4D937225DED853009F1127 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				FA4D937325DED853009F1127 /* Assets.xcassets */,
-				FA4D937425DED853009F1127 /* LaunchScreen.storyboard */,
-				FA4D937625DED853009F1127 /* AppDelegate.swift */,
-				FA4D937725DED853009F1127 /* SceneDelegate.swift */,
-			);
-			name = Support;
-			path = ReverseVideo/Support;
-			sourceTree = SOURCE_ROOT;
-		};
 		FA4D937D25DED85F009F1127 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 			children = (
 				FA4D939425DED96E009F1127 /* HomeViewController.swift */,
 				FA4D939525DED96E009F1127 /* EditorViewController.swift */,
+				FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA39B56425D17CFD00DB7D54 /* Build configuration list for PBXNativeTarget "ReverseVideo" */;
 			buildPhases = (
+				D10D4CFD25B6BC711830222E /* [CP] Check Pods Manifest.lock */,
 				FA39B54C25D17CF900DB7D54 /* Sources */,
 				FA39B54D25D17CF900DB7D54 /* Frameworks */,
 				FA39B54E25D17CF900DB7D54 /* Resources */,
+				644E534F10E148D55BE401B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA03671D25DED3F70073704D /* speedCollectionViewCell.xib in Resources */,
-				FA4D937925DED853009F1127 /* LaunchScreen.storyboard in Resources */,
 				FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */,
 				FA03670025DED2DE0073704D /* Main.storyboard in Resources */,
 			);
@@ -244,16 +259,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		644E534F10E148D55BE401B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D10D4CFD25B6BC711830222E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReverseVideo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA39B54C25D17CF900DB7D54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3CD57425F8E0E900A3AF25 /* CircularButton.swift in Sources */,
+				FA3CD58825FBD85B00A3AF25 /* RVAlertViewController.swift in Sources */,
 				FA03671825DED3F20073704D /* ButtonView.swift in Sources */,
 				FA03673425DED4E30073704D /* UIViewController+Ext.swift in Sources */,
 				FA03672A25DED4D90073704D /* VideoGeneratorError.swift in Sources */,
-				FA4D937A25DED853009F1127 /* AppDelegate.swift in Sources */,
-				FA4D937B25DED853009F1127 /* SceneDelegate.swift in Sources */,
 				FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */,
 				FA03671E25DED3F70073704D /* speedCollectionViewCell.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
@@ -263,6 +320,7 @@
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
 				FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */,
+				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,14 +334,6 @@
 				FA39B55A25D17CF900DB7D54 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FA4D937425DED853009F1127 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA4D937525DED853009F1127 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */ = {
@@ -415,6 +465,7 @@
 		};
 		FA39B56525D17CFD00DB7D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +485,7 @@
 		};
 		FA39B56625D17CFD00DB7D54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
