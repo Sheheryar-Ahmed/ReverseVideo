@@ -6,6 +6,6 @@ target 'ReverseVideo' do
   use_frameworks!
 
   # Pods for ReverseVideo
-pod 'NVActivityIndicatorView'
-
+  pod 'NVActivityIndicatorView'
+  pod 'Google-Mobile-Ads-SDK'
 end
