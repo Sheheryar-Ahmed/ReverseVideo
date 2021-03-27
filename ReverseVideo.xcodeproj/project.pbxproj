@@ -28,6 +28,7 @@
 		FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938225DED85F009F1127 /* SceneDelegate.swift */; };
 		FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939425DED96E009F1127 /* HomeViewController.swift */; };
 		FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939525DED96E009F1127 /* EditorViewController.swift */; };
+		FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -253,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */,
 				FA03671D25DED3F70073704D /* speedCollectionViewCell.xib in Resources */,
 				FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */,
 				FA03670025DED2DE0073704D /* Main.storyboard in Resources */,
@@ -473,8 +475,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H5K3P8XL9A;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,10 +544,10 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -554,8 +558,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H5K3P8XL9A;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,10 +627,10 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
