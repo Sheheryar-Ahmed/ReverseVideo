@@ -27,13 +27,13 @@
 	<key>NSAppleMusicUsageDescription</key>
 	<string>We need to access your Media Library in order to Save edited videos.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>We need to access your camera in order to record videos.</string>
+	<string>We need to access your camera in order to record videos for editing.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>We need to access your microphone to record audio with videos.</string>
+	<string>We need to access your microphone to record audio with videos for editing.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need to access your photos to access your videos and Save videos.</string>
+	<string>We need to access your photos to in order to select your videos and Save edited videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to access your photos to access your videos and Save videos.</string>
+	<string>We need to access your Photo Library to access your videos and photos for editing.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
