@@ -11,11 +11,20 @@ class speedCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlets
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var lineImageView: UIImageView!
+    
+    @IBOutlet weak var lineImageTopConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     override var isSelected: Bool {
         didSet {
             label.textColor = isSelected ? .rvOrange : .white
+            lineImageView.tintColor = isSelected ? .rvOrange : .white
+            lineImageTopConstraint.constant = isSelected ? 0.0 : 10.0
+            
+            UIView.animate(withDuration: 0.3) {
+                self.layoutIfNeeded()
+            }
         }
     }
     

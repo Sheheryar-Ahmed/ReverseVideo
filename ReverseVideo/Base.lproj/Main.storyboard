@@ -219,7 +219,6 @@
                                             <constraint firstAttribute="width" constant="30" id="mQW-7U-vmL"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" image="play">
                                             <color key="titleColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -227,18 +226,13 @@
                                             <action selector="playButtonPressed" destination="poc-M7-Klr" eventType="touchUpInside" id="1Ya-HY-bzM"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-AF-egk">
-                                        <rect key="frame" x="63" y="15" width="288" height="31"/>
-                                        <color key="minimumTrackTintColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfS-uW-xbI">
-                                        <rect key="frame" x="369" y="15" width="30" height="30"/>
+                                        <rect key="frame" x="55" y="15" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Diu-qH-TsD"/>
-                                            <constraint firstAttribute="height" constant="30" id="eSt-D9-loD"/>
+                                            <constraint firstAttribute="width" constant="30" id="XAg-At-6ZB"/>
+                                            <constraint firstAttribute="height" constant="30" id="fmb-18-12U"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" image="stop">
                                             <color key="titleColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -246,17 +240,23 @@
                                             <action selector="stopButtonPressed" destination="poc-M7-Klr" eventType="touchUpInside" id="jrl-eO-zZP"/>
                                         </connections>
                                     </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-AF-egk">
+                                        <rect key="frame" x="103" y="15" width="293" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="thg-yI-gi4"/>
+                                        </constraints>
+                                        <color key="minimumTrackTintColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Efb-ut-bPC" firstAttribute="top" secondItem="KUe-Ta-996" secondAttribute="top" constant="15" id="8qj-Ue-dKc"/>
-                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="top" secondItem="KUe-Ta-996" secondAttribute="top" constant="15" id="AEl-4Q-Sbw"/>
                                     <constraint firstAttribute="height" constant="50" id="AFc-et-QNL"/>
-                                    <constraint firstItem="KfN-AF-egk" firstAttribute="centerX" secondItem="KUe-Ta-996" secondAttribute="centerX" id="Au9-xf-bME"/>
-                                    <constraint firstAttribute="trailing" secondItem="RfS-uW-xbI" secondAttribute="trailing" constant="15" id="Awi-cb-Lxi"/>
-                                    <constraint firstItem="KfN-AF-egk" firstAttribute="leading" secondItem="Efb-ut-bPC" secondAttribute="trailing" constant="20" id="MOY-1Y-opO"/>
-                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="leading" secondItem="KfN-AF-egk" secondAttribute="trailing" constant="20" id="Y09-jP-Igo"/>
+                                    <constraint firstAttribute="trailing" secondItem="KfN-AF-egk" secondAttribute="trailing" constant="20" id="HVn-Kd-GYe"/>
+                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="top" secondItem="KUe-Ta-996" secondAttribute="top" constant="15" id="ZUu-f3-2hH"/>
+                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="leading" secondItem="Efb-ut-bPC" secondAttribute="trailing" constant="10" id="Ze2-ro-IGB"/>
                                     <constraint firstItem="Efb-ut-bPC" firstAttribute="leading" secondItem="KUe-Ta-996" secondAttribute="leading" constant="15" id="y6Z-7I-UPP"/>
+                                    <constraint firstItem="KfN-AF-egk" firstAttribute="leading" secondItem="RfS-uW-xbI" secondAttribute="trailing" constant="20" id="yU6-ia-zeg"/>
                                     <constraint firstItem="KfN-AF-egk" firstAttribute="top" secondItem="KUe-Ta-996" secondAttribute="top" constant="15" id="yp5-3W-nmy"/>
                                 </constraints>
                             </view>
