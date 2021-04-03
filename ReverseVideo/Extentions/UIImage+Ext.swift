@@ -14,6 +14,14 @@ extension UIImage {
     class var doneIcon: UIImage? {
         return UIImage(named: "done")
     }
+    
+    class var playIcon: UIImage? {
+        return UIImage(named: "play")
+    }
+    
+    class var pauseIcon: UIImage? {
+        return UIImage(named: "pause")
+    }
   
   /// Method to scale an image to the given size while keeping the aspect ratio
   ///

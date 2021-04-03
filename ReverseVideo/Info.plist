@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Reverse Video</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -23,15 +25,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>We need to access your photos</string>
+	<string>We need to access your Media Library in order to Save edited videos.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>We need to access your camera</string>
+	<string>We need to access your camera in order to record videos.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>We need to access your microphone.</string>
+	<string>We need to access your microphone to record audio with videos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need to access your photos</string>
+	<string>We need to access your photos to access your videos and Save videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to access your photos</string>
+	<string>We need to access your photos to access your videos and Save videos.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

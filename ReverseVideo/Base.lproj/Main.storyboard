@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -211,9 +212,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-Ta-996">
                                 <rect key="frame" x="0.0" y="796" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-ut-bPC">
-                                        <rect key="frame" x="15" y="15" width="32" height="30"/>
-                                        <state key="normal" title="Play">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-ut-bPC">
+                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Nz5-4s-ymt"/>
+                                            <constraint firstAttribute="width" constant="30" id="mQW-7U-vmL"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="play">
                                             <color key="titleColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -221,12 +228,18 @@
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-AF-egk">
-                                        <rect key="frame" x="65" y="15" width="284" height="31"/>
+                                        <rect key="frame" x="63" y="15" width="288" height="31"/>
                                         <color key="minimumTrackTintColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfS-uW-xbI">
-                                        <rect key="frame" x="367" y="15" width="32" height="30"/>
-                                        <state key="normal" title="Stop">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfS-uW-xbI">
+                                        <rect key="frame" x="369" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Diu-qH-TsD"/>
+                                            <constraint firstAttribute="height" constant="30" id="eSt-D9-loD"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="stop">
                                             <color key="titleColor" red="1" green="0.38823529410000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -242,7 +255,7 @@
                                     <constraint firstItem="KfN-AF-egk" firstAttribute="centerX" secondItem="KUe-Ta-996" secondAttribute="centerX" id="Au9-xf-bME"/>
                                     <constraint firstAttribute="trailing" secondItem="RfS-uW-xbI" secondAttribute="trailing" constant="15" id="Awi-cb-Lxi"/>
                                     <constraint firstItem="KfN-AF-egk" firstAttribute="leading" secondItem="Efb-ut-bPC" secondAttribute="trailing" constant="20" id="MOY-1Y-opO"/>
-                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="leading" secondItem="KfN-AF-egk" secondAttribute="trailing" constant="20" id="wSj-pS-Wbj"/>
+                                    <constraint firstItem="RfS-uW-xbI" firstAttribute="leading" secondItem="KfN-AF-egk" secondAttribute="trailing" constant="20" id="Y09-jP-Igo"/>
                                     <constraint firstItem="Efb-ut-bPC" firstAttribute="leading" secondItem="KUe-Ta-996" secondAttribute="leading" constant="15" id="y6Z-7I-UPP"/>
                                     <constraint firstItem="KfN-AF-egk" firstAttribute="top" secondItem="KUe-Ta-996" secondAttribute="top" constant="15" id="yp5-3W-nmy"/>
                                 </constraints>
@@ -279,6 +292,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="1eE-MI-AYn" id="mva-oy-row"/>
+                        <outlet property="playButton" destination="Efb-ut-bPC" id="Exg-SZ-oOI"/>
                         <outlet property="speedCollectionView" destination="Cyv-be-h6v" id="soB-0r-0v0"/>
                         <outlet property="videoSlider" destination="KfN-AF-egk" id="2oU-rG-6Ox"/>
                         <outlet property="videoView" destination="rjS-Eh-oic" id="SEY-X5-weT"/>
@@ -295,6 +309,8 @@
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="iconWithText" width="1025" height="1024"/>
+        <image name="play" width="64" height="64"/>
+        <image name="stop" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
