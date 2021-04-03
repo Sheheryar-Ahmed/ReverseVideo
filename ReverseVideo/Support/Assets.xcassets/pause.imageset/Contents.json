@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Reverse Video app Icon with text.png",
+      "filename" : "iconfinder_music_player_black-03_3695047.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,5 +17,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }
