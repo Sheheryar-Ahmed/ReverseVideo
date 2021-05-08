@@ -8,4 +8,6 @@ target 'ReverseVideo' do
   # Pods for ReverseVideo
   pod 'NVActivityIndicatorView'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Analytics'
+  
 end

@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initializing google ads
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        // initializing firebase
+        FirebaseApp.configure()
         return true
     }
 

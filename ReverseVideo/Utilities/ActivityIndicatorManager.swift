@@ -37,6 +37,7 @@ class ActivityIndicatorManager {
     }
     
     func stopAnimating() {
+        
         self.activityIndicatorView?.stopAnimating()
         self.activityIndicatorView?.removeFromSuperview()
     }
