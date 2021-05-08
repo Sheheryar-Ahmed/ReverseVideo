@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
         imagePicker.mediaTypes = [kUTTypeMovie as String]
         imagePicker.allowsEditing = true
         imagePicker.sourceType = sourceType
+        imagePicker.videoQuality = .typeHigh
         self.present(imagePicker, animated: true, completion: nil)
     }
     

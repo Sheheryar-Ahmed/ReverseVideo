@@ -22,14 +22,14 @@
 		FA29E8B62619A2AC001253F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA29E8B52619A2AC001253F3 /* GoogleService-Info.plist */; };
 		FA2F87262602333F0006458C /* RVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F87252602333F0006458C /* RVConstants.swift */; };
 		FA3CD57425F8E0E900A3AF25 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */; };
-		FA3CD58825FBD85B00A3AF25 /* RVAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */; };
 		FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CD58B25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift */; };
 		FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937E25DED85F009F1127 /* Assets.xcassets */; };
 		FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938125DED85F009F1127 /* AppDelegate.swift */; };
 		FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938225DED85F009F1127 /* SceneDelegate.swift */; };
-		FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939425DED96E009F1127 /* HomeViewController.swift */; };
-		FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D939525DED96E009F1127 /* EditorViewController.swift */; };
 		FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */; };
+		FABA1D962646822A00644633 /* RVAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D932646822A00644633 /* RVAlertViewController.swift */; };
+		FABA1D972646822A00644633 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D942646822A00644633 /* HomeViewController.swift */; };
+		FABA1D982646822A00644633 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D952646822A00644633 /* EditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,14 +52,14 @@
 		FA39B55A25D17CF900DB7D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA39B56125D17CFD00DB7D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
-		FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVAlertViewController.swift; sourceTree = "<group>"; };
 		FA3CD58B25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		FA4D937E25DED85F009F1127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4D938025DED85F009F1127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4D938125DED85F009F1127 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA4D938225DED85F009F1127 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA4D939425DED96E009F1127 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FA4D939525DED96E009F1127 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		FABA1D932646822A00644633 /* RVAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVAlertViewController.swift; sourceTree = "<group>"; };
+		FABA1D942646822A00644633 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FABA1D952646822A00644633 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +191,9 @@
 		FA4D939325DED96E009F1127 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D939425DED96E009F1127 /* HomeViewController.swift */,
-				FA4D939525DED96E009F1127 /* EditorViewController.swift */,
-				FA3CD58725FBD85B00A3AF25 /* RVAlertViewController.swift */,
+				FABA1D952646822A00644633 /* EditorViewController.swift */,
+				FABA1D942646822A00644633 /* HomeViewController.swift */,
+				FABA1D932646822A00644633 /* RVAlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,22 +315,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3CD57425F8E0E900A3AF25 /* CircularButton.swift in Sources */,
-				FA3CD58825FBD85B00A3AF25 /* RVAlertViewController.swift in Sources */,
 				FA03671825DED3F20073704D /* ButtonView.swift in Sources */,
 				FA03673425DED4E30073704D /* UIViewController+Ext.swift in Sources */,
 				FA03672A25DED4D90073704D /* VideoGeneratorError.swift in Sources */,
-				FA4D939625DED96E009F1127 /* HomeViewController.swift in Sources */,
 				FA03671E25DED3F70073704D /* speedCollectionViewCell.swift in Sources */,
+				FABA1D962646822A00644633 /* RVAlertViewController.swift in Sources */,
 				FA2F87262602333F0006458C /* RVConstants.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
 				FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */,
 				FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */,
 				FA03673225DED4E30073704D /* UIImage+Ext.swift in Sources */,
+				FABA1D972646822A00644633 /* HomeViewController.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
-				FA4D939725DED96E009F1127 /* EditorViewController.swift in Sources */,
 				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
+				FABA1D982646822A00644633 /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
