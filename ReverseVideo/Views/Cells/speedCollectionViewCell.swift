@@ -12,7 +12,6 @@ class speedCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var lineImageView: UIImageView!
-    
     @IBOutlet weak var lineImageTopConstraint: NSLayoutConstraint!
     
     // MARK: - Properties

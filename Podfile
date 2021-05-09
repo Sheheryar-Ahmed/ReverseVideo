@@ -9,5 +9,5 @@ target 'ReverseVideo' do
   pod 'NVActivityIndicatorView'
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Analytics'
-  
+  pod 'Firebase/Crashlytics'
 end
