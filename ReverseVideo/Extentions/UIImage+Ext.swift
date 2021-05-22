@@ -23,6 +23,25 @@ extension UIImage {
         return UIImage(named: "pause")
     }
   
+    class var reverseIcon: UIImage? {
+        return UIImage(named: "reverseIcon")
+    }
+    
+    class var speedIcon: UIImage? {
+        return UIImage(named: "speedIcon")
+    }
+    
+    class var audioIcon: UIImage? {
+        return UIImage(named: "audioIcon")
+    }
+    
+    class var filterIcon: UIImage? {
+        return UIImage(named: "filterIcon")
+    }
+    
+    class var textIcon: UIImage? {
+        return UIImage(named: "textIcon")
+    }
   /// Method to scale an image to the given size while keeping the aspect ratio
   ///
   /// - Parameter newSize: the new size for the image

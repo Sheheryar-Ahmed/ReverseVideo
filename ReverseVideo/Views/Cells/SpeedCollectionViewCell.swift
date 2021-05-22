@@ -7,7 +7,7 @@
 
 import UIKit
 
-class speedCollectionViewCell: UICollectionViewCell {
+class SpeedCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBOutlets
     @IBOutlet weak var label: UILabel!
