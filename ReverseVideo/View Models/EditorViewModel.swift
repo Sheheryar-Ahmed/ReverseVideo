@@ -11,7 +11,7 @@ import Photos
 class EditorViewModel {
     
     // MARK: - Properties
-    let speedArray: [Float] = [0.25, 0.50, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0]
+   
     let features = ["Reverse", "Speed", "Audio", "Filters", "Text"]
     let featureImages: [UIImage?] = [.reverseIcon, .speedIcon, .audioIcon, .filterIcon, .textIcon]
     

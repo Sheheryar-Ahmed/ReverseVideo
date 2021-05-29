@@ -16,7 +16,11 @@ class EditorViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var videoSlider: UISlider!
-    @IBOutlet weak var speedCollectionView: UICollectionView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var videoControllerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var featuresCollectionView: UICollectionView!
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var playButton: UIButton!
     
@@ -24,7 +28,6 @@ class EditorViewController: UIViewController {
     var videoUrl: URL!
     var avplayer = AVPlayer()
     var playerController = AVPlayerViewController()
-    var speedArray: [Float] = [0.25, 0.50, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0]
     var currentSpeed: Float = 1.0
     var isPlaying: Bool = false
     var selectedIndex = 0
@@ -33,12 +36,13 @@ class EditorViewController: UIViewController {
     var interstitial: GADInterstitialAd!
     var currentPlayTapCount = 0
     var isExportInterstitial = false
+    var viewModel = EditorViewModel()
     
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        setupCollectionView()
+        
+        setupCollectionViews()
         createAndLoadInterstitial()
         setupBannerAd()
         addVideoPlayer(videoUrl: videoUrl, to: videoView)
@@ -48,10 +52,7 @@ class EditorViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if currentSpeed == 1.0 {
-        speedCollectionView.selectItem(at: IndexPath(row: 3, section: 0), animated: false, scrollPosition: .centeredHorizontally)
-        }
+        setContainerViewHidden(with: nil, isHidden: true, withAnimation: false)
     }
     
     // MARK - IBActions
@@ -59,9 +60,16 @@ class EditorViewController: UIViewController {
         
         if interstitial != nil {
             isExportInterstitial = true
-          interstitial.present(fromRootViewController: self)
+            interstitial.present(fromRootViewController: self)
         } else {
-          exportVideo()
+            viewModel.exportVideo(withSpeed: -currentSpeed, videoUrl: videoUrl) { [self] (result) in
+                switch result {
+                case .failure(let error):
+                    showAlert(title: "Error", message: error.localizedDescription)
+                case .success(let message):
+                    showAlert(title: "Success", message: message)
+                }
+            }
         }
     }
     
@@ -75,7 +83,7 @@ class EditorViewController: UIViewController {
         if currentPlayTapCount > 2 {
             if interstitial != nil {
                 isExportInterstitial = false
-              interstitial.present(fromRootViewController: self)
+                interstitial.present(fromRootViewController: self)
             }  else {
                 if avplayer.status == .readyToPlay {
                     isPlaying ? avplayer.pause() : avplayer.playImmediately(atRate: -currentSpeed)
@@ -119,28 +127,97 @@ class EditorViewController: UIViewController {
         }
     }
     
-    // MARK: - Private Methods    
+    // MARK: - Private Methods
+    private func setContainerViewHidden(with viewController: UIViewController?, isHidden: Bool, withAnimation: Bool) {
+        var bottomConstraint: CGFloat = 0
+        
+        if isHidden {
+            bottomConstraint = -(180  + bannerView.frame.height +  self.view.safeAreaInsets.bottom)
+            videoControllerViewBottomConstraint.constant  = 0
+//          self.renderViewBottomConstraint.constant = 136
+        } else {
+            bottomConstraint = 0
+            videoControllerViewBottomConstraint.constant = 180 - bannerView.frame.height -  self.view.safeAreaInsets.bottom
+            
+            if let vc = viewController {
+                addViewControllerToView(containerView, viewController: vc)
+            }
+//          self.renderViewBottomConstraint.constant = 156
+        }
+        
+        containerViewBottomConstraint.constant = bottomConstraint
+//        self.containerViewHeightConstraint.constant = 0
+        
+        if withAnimation {
+            
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+                self.view.layoutIfNeeded()
+                
+            } completion: { (_) in
+                self.view.layoutIfNeeded()
+                if isHidden , let vc = viewController {
+                    self.removeViewControllerFromView(viewController: vc)
+                }
+            }
+        } else {
+            self.view.layoutIfNeeded()
+        }
+        
+        //        self.containerViewTopConstraint.constant = topConstraint
+        //        featuresCollectionView.isHidden = !isHidden
+        
+        //        if withAnimation {
+        //            UIView.animate(withDuration: 0.35,
+        //                           delay: 0,
+        //                           options: .curveEaseOut,
+        //                           animations: {
+        //                            self.view.layoutIfNeeded()
+        //                           },
+        //                           completion: { _ in
+        //                            if let vc = viewController, isHidden {
+        //                                self.removeViewControllerFromView(viewController: vc)
+        //                                self.containerView.isHidden = false
+        //                            }
+        //                           })
+        //        } else if let vc = viewController, isHidden {
+        //            self.removeViewControllerFromView(viewController: vc)
+        //            self.containerView.isHidden = false
+        //        }
+    }
+    
+    private func addViewControllerToView(_ view: UIView, viewController: UIViewController) {
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParent: self)
+    }
+    
+    private func removeViewControllerFromView(viewController: UIViewController) {
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
+    }
+    
     func createAndLoadInterstitial() {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:RVConstants.adIDs.exportInterstitial,
-                                       request: request,
-                             completionHandler: { [self] ad, error in
-                               if let error = error {
-                                 print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                 return
-                               }
-                               interstitial = ad
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
                                 interstitial?.fullScreenContentDelegate = self
-                             }
-           )
+                               }
+        )
     }
     
-    func setupCollectionView() {
-        speedCollectionView.delegate = self
-        speedCollectionView.dataSource = self
-        speedCollectionView.register(UINib(nibName: speedCollectionViewCell.name, bundle: nil), forCellWithReuseIdentifier: speedCollectionViewCell.identifier)
-        
-        speedCollectionView.allowsMultipleSelection = false
+    func setupCollectionViews() { 
+        featuresCollectionView.delegate = self
+        featuresCollectionView.dataSource = self
+        featuresCollectionView.register(UINib(nibName: FeaturesCollectionViewCell.name, bundle: nil), forCellWithReuseIdentifier: FeaturesCollectionViewCell.identifier)
     }
     
     func setupBannerAd() {
@@ -155,7 +232,7 @@ class EditorViewController: UIViewController {
         let interval = CMTime(value: 1, timescale: 2)
         avPlayer.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (ProgressTime) in
             let seconds = CMTimeGetSeconds(ProgressTime)
-
+            
             if let duration = (self.avplayer.currentItem?.asset.duration) {
                 
                 let durationSeconds = CMTimeGetSeconds(duration)
@@ -178,7 +255,7 @@ class EditorViewController: UIViewController {
         playerController.view.frame = view.bounds
         
         playerController.showsPlaybackControls = false
-        avplayer.isMuted = false
+        avplayer.isMuted = true
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         
         let duratTime: CMTime = (avplayer.currentItem?.asset.duration)!
@@ -190,54 +267,25 @@ class EditorViewController: UIViewController {
         }
     }
     
-    func exportVideo() {
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func showLoading() {
         activityIndicator.startAnimating(in: self.videoView)
         self.view.isUserInteractionEnabled = false
         videoView.alpha = 0.6
-        
-        VideoGenerator.current.reverseVideo(fromVideo: videoUrl, withSpeed: currentSpeed) { (result) in
-            
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                self.videoView.alpha = 1
-            }
-         
-            switch result {
-            case .failure(let error):
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-                DispatchQueue.main.async {
-                    self.present(alert, animated: true, completion: nil)
-                }
-            case .success(let url) :
-                            let saveVideoToPhotos = {
-                                PHPhotoLibrary.shared().performChanges({
-                                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-                                }) { saved, error in
-                                    let success = saved && (error == nil)
-                                    let title = success ? "Success" : "Error"
-                                    let message = success ? "Video saved" : "Failed to save video"
-                    
-                                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-                                    DispatchQueue.main.async {
-                                        self.present(alert, animated: true, completion: nil)
-                                    }
-                                }
-                            }
-                    
-                            //  Ensure permission to access Photo Library
-                            if PHPhotoLibrary.authorizationStatus() != .authorized {
-                                PHPhotoLibrary.requestAuthorization { status in
-                                    if status == .authorized {
-                                        saveVideoToPhotos()
-                                    }
-                                }
-                            } else {
-                                saveVideoToPhotos()
-                            }
-            }
+    }
+    
+    func hideLoading() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.view.isUserInteractionEnabled = true
+            self.videoView.alpha = 1
         }
     }
 }
@@ -247,51 +295,110 @@ extension EditorViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     // DataSource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return speedArray.count
+        return viewModel.features.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: speedCollectionViewCell.identifier, for: indexPath) as! speedCollectionViewCell
-        cell.label.text = "\(speedArray[indexPath.row])"
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturesCollectionViewCell.identifier, for: indexPath) as! FeaturesCollectionViewCell
+        
+        cell.label.text = viewModel.features[indexPath.row]
+        cell.imageView.image = viewModel.featureImages[indexPath.row]
+        if indexPath.row == 0 {
+            cell.imageView.tintColor = .red
+        }
+        
         return cell
+        
     }
     
     // Delegate Methods
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.6) {
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-        }
         
-        currentSpeed = speedArray[indexPath.row]
-        isPlaying ? avplayer.playImmediately(atRate: -currentSpeed) : avplayer.pause()
+        switch indexPath.row {
+        case 0:
+            let featureVC = storyboard?.instantiateViewController(identifier: ReverseViewController.identifier) as! ReverseViewController
+            featureVC.delegate = self
+            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+        case 1:
+            let featureVC = storyboard?.instantiateViewController(identifier: SpeedViewController.identifier) as! SpeedViewController
+            featureVC.delegate = self
+            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+        case 2:
+            let featureVC = storyboard?.instantiateViewController(identifier: AudioViewController.identifier) as! AudioViewController
+            featureVC.delegate = self
+            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+        case 3:
+            let featureVC = storyboard?.instantiateViewController(identifier: FiltersViewController.identifier) as! FiltersViewController
+            featureVC.delegate = self
+            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+        case 4:
+            let featureVC = storyboard?.instantiateViewController(identifier: TextViewController.identifier) as! TextViewController
+            featureVC.delegate = self
+            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+        default:
+            break
+        }
+
     }
     
     // FlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let center = collectionView.frame.width / 2
-        return UIEdgeInsets(top: 0, left: center, bottom: 0, right: center)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
+    
 }
 
 extension EditorViewController: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         if isExportInterstitial {
-            exportVideo()
+            showLoading()
+            viewModel.exportVideo(withSpeed: -currentSpeed, videoUrl: videoUrl) { [self] (result) in
+                switch result {
+                case .failure(let error):
+                    showAlert(title: "Error", message: error.localizedDescription)
+                case .success(let message):
+                    showAlert(title: "Success", message: message)
+                }
+            }
         }
         
         createAndLoadInterstitial()
     }
 }
 
-extension EditorViewController: UIScrollViewDelegate {
+extension EditorViewController: ReverseViewControllerDelegate  {
+    func reverseTickButtonTapped(viewController: UIViewController) {
+        setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
+    }
+}
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let visibleRect = CGRect(origin: speedCollectionView.contentOffset, size: speedCollectionView.bounds.size)
-        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        guard let visibleIndexPath = speedCollectionView.indexPathForItem(at: visiblePoint) else { return }
-        
-        speedCollectionView.selectItem(at: visibleIndexPath, animated: false, scrollPosition: .centeredVertically)
-        currentSpeed = speedArray[visibleIndexPath.row]
+extension EditorViewController: SpeedViewControllerDelegate  {
+    func speedTickButtonTapped(viewController: UIViewController) {
+        setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
+    }
+    
+    func didSelectSpeed(value: Float) {
+        currentSpeed = value
         isPlaying ? avplayer.playImmediately(atRate: -currentSpeed) : avplayer.pause()
     }
 }
+
+extension EditorViewController: AudioViewControllerDelegate  {
+    func audioTickButtonTapped(viewController: UIViewController) {
+        setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
+    }
+}
+
+extension EditorViewController: FiltersViewControllerDelegate  {
+    func filtersTickButtonTapped(viewController: UIViewController) {
+        setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
+    }
+}
+
+extension EditorViewController: TextViewControllerDelegate  {
+    func textTickButtonTapped(viewController: UIViewController) {
+        setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
+    }
+}
+
