@@ -159,8 +159,7 @@
 				FA03671A25DED3F70073704D /* Cells */,
 				FA03671425DED3F10073704D /* Custom Views */,
 			);
-			name = Views;
-			path = "../../../../Downloads/ReverseVideo-main/ReverseVideo/Views";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FA39B54725D17CF900DB7D54 = {
