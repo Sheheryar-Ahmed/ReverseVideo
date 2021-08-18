@@ -11,6 +11,11 @@ import UIKit
 extension UIImage {
     
     // MARK: - Properties
+    
+    class var filterGirl: UIImage? {
+        return UIImage(named: "filterGirl")
+    }
+    
     class var doneIcon: UIImage? {
         return UIImage(named: "done")
     }
@@ -23,6 +28,40 @@ extension UIImage {
         return UIImage(named: "pause")
     }
   
+    class var reverseIcon: UIImage? {
+        return UIImage(named: "reverseIcon")
+    }
+    
+    class var speedIcon: UIImage? {
+        return UIImage(named: "speedIcon")
+    }
+    
+    class var audioIcon: UIImage? {
+        return UIImage(named: "audioIcon")
+    }
+    
+    class var filterIcon: UIImage? {
+        return UIImage(named: "filterIcon")
+    }
+    
+    class var textIcon: UIImage? {
+        return UIImage(named: "textIcon")
+    }
+    
+    // MARK: - Properties
+    // resize image with aspect ratio
+     func resizeImage(newHeight: CGFloat) -> UIImage? {
+        
+        let scale = newHeight / self.size.height
+        let newWidth = self.size.width * scale
+        UIGraphicsBeginImageContext(CGSize(width:newWidth, height:newHeight))
+        self.draw(in:CGRect(x:0, y:0, width:newWidth, height:newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
+    }
+    
   /// Method to scale an image to the given size while keeping the aspect ratio
   ///
   /// - Parameter newSize: the new size for the image

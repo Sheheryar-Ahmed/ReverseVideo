@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = sourceType
         imagePicker.videoQuality = .typeHigh
+        imagePicker.view.backgroundColor = .black
         self.present(imagePicker, animated: true, completion: nil)
     }
     
@@ -49,7 +50,8 @@ class HomeViewController: UIViewController {
             return
         }
         
-        editorVC.videoUrl = videoURL
+        editorVC.viewModel.originalVideoUrl = videoURL
+        editorVC.viewModel.videoUrl = videoURL
         editorVC.modalPresentationStyle = .overFullScreen
         present(editorVC, animated: false)
     }
@@ -72,3 +74,5 @@ extension HomeViewController: UIImagePickerControllerDelegate {
 
 extension HomeViewController: UINavigationControllerDelegate {
 }
+
+

@@ -62,7 +62,7 @@ class RVAlertViewController: UIViewController {
             containerView.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
-    private func configureImageView(){
+    private func configureImageView() {
         containerView.addSubview(imageView)
         imageView.image = UIImage.doneIcon
         
@@ -75,7 +75,7 @@ class RVAlertViewController: UIViewController {
         ])
     }
     
-    private func configureMessageLabel(){
+    private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
         messageLabel.text = message ?? "Image Saved!"
         messageLabel.numberOfLines = 4
@@ -92,7 +92,7 @@ class RVAlertViewController: UIViewController {
         ])
     }
     
-    @objc func dismissVC(){
+    @objc func dismissVC() {
         dismiss(animated: true, completion: nil)
     }
     
