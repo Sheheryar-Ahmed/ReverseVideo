@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ImageWithTextCollectionViewCell" customModule="ReverseVideo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S3N-7E-O6S">
+                        <rect key="frame" x="5" y="0.0" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="d4F-Zj-vEh"/>
+                            <constraint firstAttribute="height" constant="60" id="ted-jM-lQv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srO-kK-ZKk">
+                        <rect key="frame" x="4" y="65" width="62" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="1" green="0.99999994039999995" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="srO-kK-ZKk" secondAttribute="trailing" constant="4" id="Wjb-4g-790"/>
+                <constraint firstItem="S3N-7E-O6S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="XZc-Mk-uA3"/>
+                <constraint firstItem="srO-kK-ZKk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="gf4-3c-QjX"/>
+                <constraint firstItem="S3N-7E-O6S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="p9g-Mg-04N"/>
+                <constraint firstItem="srO-kK-ZKk" firstAttribute="top" secondItem="S3N-7E-O6S" secondAttribute="bottom" constant="5" id="paw-hj-wXT"/>
+                <constraint firstAttribute="bottom" secondItem="srO-kK-ZKk" secondAttribute="bottom" constant="5" id="pnN-ab-nsm"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="S3N-7E-O6S" id="zOL-le-wOG"/>
+                <outlet property="label" destination="srO-kK-ZKk" id="Ibp-oT-99Y"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
+        </collectionViewCell>
+    </objects>
+</document>

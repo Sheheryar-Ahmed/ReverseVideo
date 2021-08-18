@@ -9,6 +9,7 @@ import UIKit
 
 protocol ReverseViewControllerDelegate {
     func reverseTickButtonTapped(viewController: UIViewController)
+    func reverseButtonToggled(isReversed: Bool)
 }
 
 class ReverseViewController: UIViewController {
@@ -35,6 +36,7 @@ class ReverseViewController: UIViewController {
     @IBAction func reverseButtonPressed() {
         isReversed.toggle()
         reverseButton.setTitle(isReversed ? "Undo Reverse" : "Reverse Video" , for: .normal)
+        delegate?.reverseButtonToggled(isReversed: isReversed)
     }
     
     // MARK: - Private Methods
