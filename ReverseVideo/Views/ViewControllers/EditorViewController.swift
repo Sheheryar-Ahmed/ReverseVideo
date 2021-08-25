@@ -27,7 +27,6 @@ class EditorViewController: UIViewController {
     // MARK: - Properties
     var avplayer = AVPlayer()
     var playerController = AVPlayerViewController()
-    var currentSpeed: Float = 1.0
     var isPlaying: Bool = false
     var selectedIndex = 0
     let generator = UIImpactFeedbackGenerator(style: .light)
@@ -36,6 +35,7 @@ class EditorViewController: UIViewController {
     var currentPlayTapCount = 0
     var isExportInterstitial = false
     var viewModel = EditorViewModel()
+    var loadingVC: LoadingViewController?
     
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
@@ -44,8 +44,7 @@ class EditorViewController: UIViewController {
         setupCollectionViews()
         createAndLoadInterstitial()
         setupBannerAd()
-        addVideoPlayer(videoUrl: viewModel.originalVideoUrl, to: videoView)
-        setupTimelineView()
+        setupVideoPlayer(videoUrl: viewModel.originalVideoUrl, to: videoView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,19 +55,19 @@ class EditorViewController: UIViewController {
     // MARK - IBActions
     @IBAction func exportButtonTapped() {
         
-        if interstitial != nil {
-            isExportInterstitial = true
-            interstitial.present(fromRootViewController: self)
-        } else {
-            viewModel.exportVideo(withSpeed: -currentSpeed, videoUrl: viewModel.videoUrl) { [self] (result) in
-                switch result {
-                case .failure(let error):
-                    showAlert(title: "Error", message: error.localizedDescription)
-                case .success(let message):
-                    showAlert(title: "Success", message: message)
-                }
-            }
-        }
+//        if interstitial != nil {
+//            isExportInterstitial = true
+//            interstitial.present(fromRootViewController: self)
+//        } else {
+//            viewModel.exportVideo(withSpeed: -viewModel.currentSpeed, videoUrl: viewModel.videoUrl) { [self] (result) in
+//                switch result {
+//                case .failure(let error):
+//                    showAlert(title: "Error", message: error.localizedDescription)
+//                case .success(let message):
+//                    showAlert(title: "Success", message: message)
+//                }
+//            }
+//        }
     }
     
     @IBAction func backButtonTapped() {
@@ -85,8 +84,11 @@ class EditorViewController: UIViewController {
             currentPlayTapCount = 0
         } else {
             if avplayer.status == .readyToPlay {
-                isPlaying ? videoTimelineView.stop() : videoTimelineView.play(atSpeed: currentSpeed)
-//                isPlaying ? avplayer.pause() : avplayer.playImmediately(atRate: -currentSpeed)
+                isPlaying ? videoTimelineView.stop() : videoTimelineView.play(atSpeed: viewModel.currentSpeed)
+                
+                if let filterKey = viewModel.currentFilterKey, let currentItem = avplayer.currentItem {
+                    avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filterKey, asset: currentItem.asset)
+                }
                 
                 playButton.setImage(isPlaying ? UIImage.playIcon : UIImage.pauseIcon, for: .normal)
                 isPlaying.toggle()
@@ -94,41 +96,9 @@ class EditorViewController: UIViewController {
         }
     }
     
-//    @IBAction func stopButtonPressed() {
-//        let duratTime: CMTime = (avplayer.currentItem?.asset.duration)!
-//
-//        if CMTIME_IS_VALID(duratTime) {
-//            avplayer.pause()
-//            playButton.setImage(UIImage.playIcon, for: .normal)
-//            isPlaying = false
-//            avplayer.seek(to: duratTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-//        }
-//    }
-    
     // MARK: - handler
-//    @objc func handleSliderChange() {
-//
-//        if  let duration = avplayer.currentItem?.duration {
-//            let totalSeconds = CMTimeGetSeconds(duration)
-//            let value  = Float(totalSeconds) - videoSlider.value
-//            let seekTime = CMTime(value: Int64(value), timescale: 1)
-//
-//            avplayer.seek(to: seekTime,toleranceBefore: CMTime.zero,toleranceAfter: CMTime.zero, completionHandler: { (completedSeek) in
-//                //perhaps do something later here
-//            })
-//        }
-//    }
     
     // MARK: - Private Methods
-    func setupTimelineView() {
-        videoTimelineView.new(asset:AVAsset(url:viewModel.videoUrl))
-        videoTimelineView.setTrimmerIsHidden(true)
-        videoTimelineView.setTrimIsEnabled(false)
-        videoTimelineView.playStatusReceiver = self
-        videoTimelineView.player = avplayer
-        videoTimelineView.repeatOn = false
-    }
-    
     private func setContainerViewHidden(with viewController: UIViewController?, isHidden: Bool, withAnimation: Bool) {
         var bottomConstraint: CGFloat = 0
         
@@ -176,21 +146,6 @@ class EditorViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-    func createAndLoadInterstitial() {
-//        let request = GADRequest()
-//        GADInterstitialAd.load(withAdUnitID:RVConstants.adIDs.exportInterstitial,
-//                               request: request,
-//                               completionHandler: { [self] ad, error in
-//                                if let error = error {
-//                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-//                                    return
-//                                }
-//                                interstitial = ad
-//                                interstitial?.fullScreenContentDelegate = self
-//                               }
-//        )
-    }
-    
     func setupCollectionViews() { 
         featuresCollectionView.delegate = self
         featuresCollectionView.dataSource = self
@@ -205,28 +160,7 @@ class EditorViewController: UIViewController {
         bannerView.load(GADRequest())
     }
     
-//    func addTimeObserver(to avPlayer: AVPlayer) {
-//        let interval = CMTime(value: 1, timescale: 2)
-//        avPlayer.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (ProgressTime) in
-//            let seconds = CMTimeGetSeconds(ProgressTime)
-//
-//            if let duration = (self.avplayer.currentItem?.asset.duration) {
-//
-//                let durationSeconds = CMTimeGetSeconds(duration)
-////                videoSlider.maximumValue = Float(durationSeconds)
-////                videoSlider.minimumValue = 0
-//
-//
-//                DispatchQueue.main.async {
-//                    print(seconds, Float64(seconds))
-//                    self.videoTimelineView.moveTo(Float64(seconds), animate: true)
-////                    videoSlider.value = Float(durationSeconds - seconds)
-//                }
-//            }
-//        }
-//    }
-    
-    func addVideoPlayer(videoUrl: URL, to view: UIView) {
+    func setupVideoPlayer(videoUrl: URL, to view: UIView) {
         let item = AVPlayerItem(url: videoUrl)
         self.avplayer = AVPlayer(playerItem: item)
         playerController.player = self.avplayer
@@ -248,14 +182,28 @@ class EditorViewController: UIViewController {
 //        else {
 //            print("In valid time")
 //        }
+        videoTimelineView.new(asset:AVAsset(url: videoUrl))
+        videoTimelineView.setTrimmerIsHidden(true)
+        videoTimelineView.setTrimIsEnabled(false)
+        videoTimelineView.playStatusReceiver = self
+        videoTimelineView.player = avplayer
+        videoTimelineView.repeatOn = false
+        
+        if isPlaying {
+            videoTimelineView.play(atSpeed: viewModel.currentSpeed)
+        }
     }
     
-    func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
+    func showLoadingVC() {
+        loadingVC = LoadingViewController()
+        loadingVC?.modalPresentationStyle = .overFullScreen
+        if let loadingVC = loadingVC {
+            self.present(loadingVC, animated: false, completion: nil)
         }
+    }
+    
+    func hideLoadingVC() {
+        loadingVC?.dismiss(animated: true, completion: nil)
     }
     
     func showLoading() {
@@ -299,25 +247,28 @@ extension EditorViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         switch indexPath.row {
         case 0:
-            let featureVC = storyboard?.instantiateViewController(identifier: ReverseViewController.identifier) as! ReverseViewController
-            featureVC.delegate = self
-            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+            let reverseVC = storyboard?.instantiateViewController(identifier: ReverseViewController.identifier) as! ReverseViewController
+            let reverseFeature = viewModel.features.first(where: {$0.type == .reverse})
+            reverseVC.isReversed =  reverseFeature?.isApplied ?? false
+            reverseVC.delegate = self
+            setContainerViewHidden(with: reverseVC, isHidden: false, withAnimation: true)
         case 1:
-            let featureVC = storyboard?.instantiateViewController(identifier: SpeedViewController.identifier) as! SpeedViewController
-            featureVC.delegate = self
-            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+            let speedVC = storyboard?.instantiateViewController(identifier: SpeedViewController.identifier) as! SpeedViewController
+            speedVC.currentSpeed = viewModel.currentSpeed
+            speedVC.delegate = self
+            setContainerViewHidden(with: speedVC, isHidden: false, withAnimation: true)
+//        case 2:
+//            let featureVC = storyboard?.instantiateViewController(identifier: AudioViewController.identifier) as! AudioViewController
+//            featureVC.delegate = self
+//            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
         case 2:
-            let featureVC = storyboard?.instantiateViewController(identifier: AudioViewController.identifier) as! AudioViewController
-            featureVC.delegate = self
-            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
-        case 3:
             let featureVC = storyboard?.instantiateViewController(identifier: FiltersViewController.identifier) as! FiltersViewController
             featureVC.delegate = self
             setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
-        case 4:
-            let featureVC = storyboard?.instantiateViewController(identifier: TextViewController.identifier) as! TextViewController
-            featureVC.delegate = self
-            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+//        case 4:
+//            let featureVC = storyboard?.instantiateViewController(identifier: TextViewController.identifier) as! TextViewController
+//            featureVC.delegate = self
+//            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
         default:
             break
         }
@@ -327,7 +278,7 @@ extension EditorViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let cellWidth = 60
         let cellCount = viewModel.features.count
-        let cellSpacing = 10
+        let cellSpacing = 30
         let totalCellWidth = cellWidth * cellCount
         let totalSpacingWidth = cellSpacing * (cellCount - 1)
         
@@ -335,24 +286,6 @@ extension EditorViewController: UICollectionViewDelegate, UICollectionViewDataSo
           let rightInset = leftInset
         
           return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
-    }
-}
-
-extension EditorViewController: GADFullScreenContentDelegate {
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        if isExportInterstitial {
-            showLoading()
-            viewModel.exportVideo(withSpeed: -currentSpeed, videoUrl: viewModel.videoUrl) { [self] (result) in
-                switch result {
-                case .failure(let error):
-                    showAlert(title: "Error", message: error.localizedDescription)
-                case .success(let message):
-                    showAlert(title: "Success", message: message)
-                }
-            }
-        }
-        
-        createAndLoadInterstitial()
     }
 }
 
@@ -365,7 +298,27 @@ extension EditorViewController: ReverseViewControllerDelegate  {
     func reverseButtonToggled(isReversed: Bool) {
         let reverseFeature = viewModel.features.first(where: {$0.type == .reverse})
         reverseFeature?.isApplied = isReversed
-        viewModel.applyFeatures()
+        
+        if isReversed {
+            showLoadingVC()
+            viewModel.reverseVideo(from: viewModel.originalVideoUrl) { [self] result in
+                
+                switch result {
+                case .success(let url):
+                    viewModel.videoUrl = url
+                    setupVideoPlayer(videoUrl: viewModel.videoUrl, to: videoView)
+                    presentRVAlertOnMainThread(message: "Successful")
+                case .failure(let error):
+                    presentRVAlertOnMainThread(message: "Failed")
+                }
+                
+                hideLoadingVC()
+            }
+        } else {
+            viewModel.videoUrl = viewModel.originalVideoUrl
+            setupVideoPlayer(videoUrl: viewModel.videoUrl, to: videoView)
+            presentRVAlertOnMainThread(message: "Successful")
+        }
     }
 }
 
@@ -375,8 +328,11 @@ extension EditorViewController: SpeedViewControllerDelegate  {
     }
     
     func didSelectSpeed(value: Float) {
-        currentSpeed = value
-        isPlaying ? avplayer.playImmediately(atRate: currentSpeed) : avplayer.pause()
+        let speedFeature = viewModel.features.first(where: {$0.type == .speed})
+        speedFeature?.isApplied = (value == 1) ? false : true
+        
+        viewModel.currentSpeed = value
+        isPlaying ? avplayer.playImmediately(atRate: viewModel.currentSpeed) : avplayer.pause()
     }
 }
 
@@ -390,6 +346,17 @@ extension EditorViewController: FiltersViewControllerDelegate  {
     func filtersTickButtonTapped(viewController: UIViewController) {
         setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
     }
+    
+    func didSelectFilter(filterKey: String) {
+        let filtersFeature = viewModel.features.first(where: {$0.type == .filters})
+        filtersFeature?.isApplied = true
+        
+        viewModel.currentFilterKey = filterKey
+        
+        if let currentItem = avplayer.currentItem {
+            avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filterKey, asset: currentItem.asset)
+        }
+    }
 }
 
 extension EditorViewController: TextViewControllerDelegate  {
@@ -402,7 +369,7 @@ extension EditorViewController: TimelinePlayStatusReceiver {
     func videoTimelineStopped() {
 //        avplayer.pause()
 //        isPlaying = false
-//        playButton.setImage(UIImage.playIcon, for: .normal)        
+//        playButton.setImage(UIImage.playIcon, for: .normal)
     }
     
     func videoTimelineMoved() {

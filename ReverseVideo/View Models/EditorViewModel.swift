@@ -8,29 +8,6 @@
 import UIKit
 import Photos
 
-enum FeatureType {
-    case reverse
-    case speed
-    case audio
-    case filters
-    case text
-    
-    var name: String {
-        switch self {
-        case .reverse:
-            return "Reverse"
-        case .speed:
-            return "Speed"
-        case .audio:
-            return "Audio"
-        case .filters:
-            return "Filters"
-        case .text:
-            return "Text"
-        }
-    }
-}
-
 class Feature {
     var type: FeatureType
     var isApplied: Bool = false
@@ -46,37 +23,86 @@ class EditorViewModel {
     // MARK: - Properties
     var originalVideoUrl: URL!
     var videoUrl: URL!
+    var currentSpeed: Float = 1.0
+    var currentFilterKey: String?
     let features: [Feature] = [Feature(fType: .reverse), Feature(fType: .speed), Feature(fType: .filters)/*, Feature(fType: .text), Feature(fType: .audio)*/]
     let featureImages: [UIImage?] = [.reverseIcon, .speedIcon, .filterIcon/*, .textIcon, .audioIcon*/]
     
-    // MARK: - Methods
-    func applyFeatures() {
-        for feature in features {
-            switch feature.type {
-            case .reverse:
-                if feature.isApplied {
-                    VideoGenerator.current.reverseVideo(fromVideo: originalVideoUrl) { result in
-                        switch result {
-                        case .success(let url):
-                            print("sucess")
-                        case .failure(let error):
-                            print("failure")
-                        }
-                    }
-                }
-            case .speed:
-                print("speed")
-                break
-            case .audio:
-                print("audio")
-                break
-            case .filters:
-                print("filters")
-                break
-            case .text:
-                break
+    
+    // MARK: - Private Methods
+    func reverseVideo(from url: URL, completion: @escaping (Result<URL, Error>) -> Void)  {
+        VideoGenerator.current.reverseVideo(fromVideo: originalVideoUrl) { result in
+            switch result {
+            case .success(let url):
+                completion(.success(url))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
+    }
+    
+    private func applyReverse() {
+        if let reverseFeature = self.features.first(where: {$0.type == .reverse}),  reverseFeature.isApplied {
+            
+            VideoGenerator.current.reverseVideo(fromVideo: originalVideoUrl) { result in
+                switch result {
+                case .success(let url):
+                    self.applySlowMo(to: url)
+                case .failure(let error):
+                    print("failure")
+                }
+            }
+        } else {
+            applySlowMo(to: originalVideoUrl)
+        }
+    }
+    
+    private func applySlowMo(to url: URL) {
+        if let slowMofeature = self.features.first(where: {$0.type == .speed}), slowMofeature.isApplied {
+            
+            VideoGenerator.current.videoScaleAssetSpeed(fromURL: url, by: Float64(currentSpeed)) { result in
+                switch result {
+                case .success(let url):
+                    self.applyFilter(to: url)
+                case .failure(let error):
+                    break
+                }
+            }
+        } else {
+            applyFilter(to: url)
+        }
+    }
+    
+    private func applyFilter(to url: URL) {
+        if let filtersFeature = self.features.first(where: {$0.type == .filters}), filtersFeature.isApplied {
+            
+        } else {
+            // Done Processing
+        }
+    }
+    
+    // MARK: - Public Methods
+    func applyFilterToComposition(filterKey: String, asset: AVAsset) -> AVVideoComposition? {
+        guard let filter = CIFilter(name: filterKey) else { return nil}
+        
+        let composition = AVVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
+
+            // Clamp to avoid blurring transparent pixels at the image edges
+            let source = request.sourceImage.clampedToExtent()
+            filter.setValue(source, forKey: kCIInputImageKey)
+            
+            // Crop the blurred output to the bounds of the original image
+            let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
+
+            // Provide the filter output to the composition
+            request.finish(with: output, context: nil)
+        })
+
+        return composition
+    }
+    
+    func applyFeatures() {
+      applyReverse()
     }
     
     func exportVideo(withSpeed: Float, videoUrl: URL, completion: @escaping (Result<String, Error>) -> Void) {

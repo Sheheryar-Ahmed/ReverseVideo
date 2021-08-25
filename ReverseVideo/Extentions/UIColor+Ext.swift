@@ -10,7 +10,7 @@ import UIKit
 extension UIColor {
     
     // MARK: - Properties
-    class var rvThemeGray: UIColor? {
+    class var rvBlack: UIColor? {
         return fromHex("141414")
     }
     class var rvOrange: UIColor? {

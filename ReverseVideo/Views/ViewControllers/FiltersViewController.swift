@@ -9,6 +9,7 @@ import UIKit
 
 protocol FiltersViewControllerDelegate {
     func filtersTickButtonTapped(viewController: UIViewController)
+    func didSelectFilter(filterKey: String)
 }
 
 class FiltersViewController: UIViewController {
@@ -20,6 +21,7 @@ class FiltersViewController: UIViewController {
     var delegate: FiltersViewControllerDelegate?
     var viewModel = FilterViewModel()
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +47,6 @@ class FiltersViewController: UIViewController {
 extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     // Data Source Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("bravo1" , viewModel.filterTypes.count)
         return viewModel.filterTypes.count
     }
     
@@ -55,12 +56,16 @@ extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDel
         let filterName = viewModel.filterTypes[indexPath.row].name
         cell.imageView.image = UIImage(named: "filters/" +  filterName)?.resizeImage(newHeight: 200) ?? UIImage.filterIcon
         cell.label.text = filterName
-        cell.backgroundColor = .white
         return cell
+    }
+    
+    // Delegate Methods
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectFilter(filterKey: viewModel.filterTypes[indexPath.row].key)
     }
     
     // FlowLayout methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 70)
+        return CGSize(width: 70, height: 100)
     }
 }

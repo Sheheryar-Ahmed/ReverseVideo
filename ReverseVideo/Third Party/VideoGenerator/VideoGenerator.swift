@@ -1017,7 +1017,7 @@ public class VideoGenerator: NSObject {
     }
     
     
-    func videoScaleAssetSpeed(fromURL url: URL,  by scale: Float64, success: @escaping ((URL) -> Void), failure: @escaping ((Error) -> Void)) {
+    func videoScaleAssetSpeed(fromURL url: URL,  by scale: Float64, completion: @escaping (Result<URL, Error>) -> Void) {
         
         /// Asset
         let asset = AVPlayerItem(url: url).asset
@@ -1075,7 +1075,7 @@ public class VideoGenerator: NSObject {
                 try FileManager.default.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
                 outputURL = outputURL.appendingPathComponent("\(outputURL.lastPathComponent).mp4")
             }catch let error {
-                failure(error)
+                completion(.failure(error))
             }
             
             //Remove existing file
@@ -1097,25 +1097,25 @@ public class VideoGenerator: NSObject {
                 exportSession.exportAsynchronously(completionHandler: {
                     switch exportSession.status {
                     case .completed :
-                        success(outputURL)
+                        completion(.success(outputURL))
                     case .failed:
                         if let _error = exportSession.error {
-                            failure(_error)
+                            completion(.failure(_error))
                         }
                     case .cancelled:
                         if let _error = exportSession.error {
-                            failure(_error)
+                            completion(.failure(_error))
                         }
                     default:
                         if let _error = exportSession.error {
-                            failure(_error)
+                            completion(.failure(_error))
                         }
                     }
                 })
             }
         } catch {
             // Handle the error
-            failure(error)
+            completion(.failure(error))
         }
         
     }

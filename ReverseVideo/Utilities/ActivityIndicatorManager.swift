@@ -12,13 +12,13 @@ class ActivityIndicatorManager {
     
     private var activityIndicatorView: NVActivityIndicatorView?
     
-    func startAnimating(in view: UIView) {
+    func startAnimating(in view: UIView, style: NVActivityIndicatorType? = .ballPulse) {
         
         if isAnimating() {
             return
         }
         
-        activityIndicatorView = NVActivityIndicatorView(frame: view.bounds, type: .ballPulse, color: .rvOrange, padding: view.frame.width / 2.5)
+        activityIndicatorView = NVActivityIndicatorView(frame: view.bounds, type: style, color: .rvOrange, padding: view.frame.width / 2.5)
         
         guard let aiv = activityIndicatorView else {
             return

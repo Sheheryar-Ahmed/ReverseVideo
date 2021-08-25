@@ -14,6 +14,13 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
+    // MARK: - Properties
+    override var isSelected: Bool {
+        didSet {
+            label.textColor = isSelected ? .rvOrange : .white
+        }
+    }
+    
     // MARK: - Lifecycle Methods
     override func awakeFromNib() {
         super.awakeFromNib()

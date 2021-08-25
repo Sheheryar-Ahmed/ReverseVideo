@@ -40,6 +40,9 @@
 		FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D938225DED85F009F1127 /* SceneDelegate.swift */; };
 		FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */; };
 		FA6D1256268F61A2007ED08B /* ColorCubeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D1255268F61A1007ED08B /* ColorCubeHelper.swift */; };
+		FA72072826CE7B89005FC86E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72072726CE7B89005FC86E /* LoadingViewController.swift */; };
+		FA72072C26D684D3005FC86E /* FeatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72072B26D684D2005FC86E /* FeatureType.swift */; };
+		FA72072E26D68525005FC86E /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72072D26D68525005FC86E /* FilterType.swift */; };
 		FABA1D962646822A00644633 /* RVAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D932646822A00644633 /* RVAlertViewController.swift */; };
 		FABA1D972646822A00644633 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D942646822A00644633 /* HomeViewController.swift */; };
 		FABA1D982646822A00644633 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1D952646822A00644633 /* EditorViewController.swift */; };
@@ -90,6 +93,9 @@
 		FA4D938125DED85F009F1127 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA4D938225DED85F009F1127 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA6D1255268F61A1007ED08B /* ColorCubeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCubeHelper.swift; sourceTree = "<group>"; };
+		FA72072726CE7B89005FC86E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FA72072B26D684D2005FC86E /* FeatureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureType.swift; sourceTree = "<group>"; };
+		FA72072D26D68525005FC86E /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		FABA1D932646822A00644633 /* RVAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVAlertViewController.swift; sourceTree = "<group>"; };
 		FABA1D942646822A00644633 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FABA1D952646822A00644633 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		FA153A9625DEC6D7006856F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA72072426CDAB27005FC86E /* UI */,
 				FA4D939325DED96E009F1127 /* ViewControllers */,
 				FA03671A25DED3F70073704D /* Cells */,
 				FA03671425DED3F10073704D /* Custom Views */,
@@ -238,7 +245,7 @@
 				FA03672625DED4D80073704D /* Utilities */,
 				FABA1DB22648302F00644633 /* View Models */,
 				FA153A9625DEC6D7006856F4 /* Views */,
-				FA39B55925D17CF900DB7D54 /* Main.storyboard */,
+				FA72072A26D684AF005FC86E /* Models */,
 				FA39B56125D17CFD00DB7D54 /* Info.plist */,
 			);
 			path = ReverseVideo;
@@ -259,6 +266,7 @@
 		FA4D939325DED96E009F1127 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA72072626CE7B51005FC86E /* Utility  */,
 				FABA1D942646822A00644633 /* HomeViewController.swift */,
 				FABA1D952646822A00644633 /* EditorViewController.swift */,
 				FA49CAB5265EA2190090948B /* ReverseViewController.swift */,
@@ -266,9 +274,35 @@
 				FA49CB762662342D0090948B /* AudioViewController.swift */,
 				FA49CB792662344C0090948B /* FiltersViewController.swift */,
 				FA49CB7C266234640090948B /* TextViewController.swift */,
-				FABA1D932646822A00644633 /* RVAlertViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA72072426CDAB27005FC86E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA39B55925D17CF900DB7D54 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA72072626CE7B51005FC86E /* Utility  */ = {
+			isa = PBXGroup;
+			children = (
+				FABA1D932646822A00644633 /* RVAlertViewController.swift */,
+				FA72072726CE7B89005FC86E /* LoadingViewController.swift */,
+			);
+			path = "Utility ";
+			sourceTree = "<group>";
+		};
+		FA72072A26D684AF005FC86E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA72072B26D684D2005FC86E /* FeatureType.swift */,
+				FA72072D26D68525005FC86E /* FilterType.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		FABA1DB22648302F00644633 /* View Models */ = {
@@ -430,10 +464,12 @@
 				FA23EC16266350EF00695367 /* TimelineScroller.swift in Sources */,
 				FABA1DAE26482FE300644633 /* FeaturesCollectionViewCell.swift in Sources */,
 				FA49CB74266234080090948B /* SpeedViewController.swift in Sources */,
+				FA72072826CE7B89005FC86E /* LoadingViewController.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
 				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA23EC15266350EF00695367 /* CenterLine.swift in Sources */,
+				FA72072C26D684D3005FC86E /* FeatureType.swift in Sources */,
 				FA23EC17266350EF00695367 /* VideoTimelineView.swift in Sources */,
 				FA23EC11266350EF00695367 /* TrimView.swift in Sources */,
 				FA23EC13266350EF00695367 /* TimelineMeasure.swift in Sources */,
@@ -442,6 +478,7 @@
 				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
 				FABA1D982646822A00644633 /* EditorViewController.swift in Sources */,
 				FA49CB7D266234640090948B /* TextViewController.swift in Sources */,
+				FA72072E26D68525005FC86E /* FilterType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

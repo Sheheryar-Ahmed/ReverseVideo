@@ -263,9 +263,10 @@ class VideoTimelineView: UIView {
             timelineView.manualScrolledAfterEnd = false
         } else if timelineView.animating == false {
             timelineView.setCurrentTime(currentPlayerTime,force:false)
-            if player!.timeControlStatus == .paused {
-                player!.play()
-            }
+            // comented to stop unknown behaviour
+//            if player!.timeControlStatus == .paused {
+//                player!.play()
+//            }
             if reachFlg {
                 if let receiver = playStatusReceiver {
                     receiver.videoTimelineMoved()
