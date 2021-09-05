@@ -24,7 +24,7 @@ class EditorViewModel {
     var originalVideoUrl: URL!
     var videoUrl: URL!
     var currentSpeed: Float = 1.0
-    var currentFilterKey: String?
+    var currentFilter: FilterType?
     let features: [Feature] = [Feature(fType: .reverse), Feature(fType: .speed), Feature(fType: .filters)/*, Feature(fType: .text), Feature(fType: .audio)*/]
     let featureImages: [UIImage?] = [.reverseIcon, .speedIcon, .filterIcon/*, .textIcon, .audioIcon*/]
     
@@ -41,41 +41,70 @@ class EditorViewModel {
         }
     }
     
-    private func applyReverse() {
-        if let reverseFeature = self.features.first(where: {$0.type == .reverse}),  reverseFeature.isApplied {
-            
-            VideoGenerator.current.reverseVideo(fromVideo: originalVideoUrl) { result in
-                switch result {
-                case .success(let url):
-                    self.applySlowMo(to: url)
-                case .failure(let error):
-                    print("failure")
-                }
-            }
-        } else {
-            applySlowMo(to: originalVideoUrl)
-        }
-    }
     
-    private func applySlowMo(to url: URL) {
+    private func applySlowMo(to url: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         if let slowMofeature = self.features.first(where: {$0.type == .speed}), slowMofeature.isApplied {
             
             VideoGenerator.current.videoScaleAssetSpeed(fromURL: url, by: Float64(currentSpeed)) { result in
                 switch result {
-                case .success(let url):
-                    self.applyFilter(to: url)
+                case .success(let modifiedUrl):
+                    self.applyFilter(to: modifiedUrl) { result in
+                        switch result {
+                        case .success(let filterAppliedUrl):
+                            completion(.success(filterAppliedUrl))
+                        case .failure(let error):
+                            completion(.failure(error))
+                        }
+                    }
                 case .failure(let error):
-                    break
+                    completion(.failure(error))
                 }
             }
         } else {
-            applyFilter(to: url)
+            applyFilter(to: url) { result in
+                switch result {
+                case .success(let filterAppliedUrl):
+                    completion(.success(filterAppliedUrl))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
         }
     }
     
-    private func applyFilter(to url: URL) {
-        if let filtersFeature = self.features.first(where: {$0.type == .filters}), filtersFeature.isApplied {
+    private func applyFilter(to url: URL, completion:@escaping (Result<URL, Error>) -> Void) {
+        if let filtersFeature = self.features.first(where: {$0.type == .filters}), filtersFeature.isApplied, let key = currentFilter?.key {
+            var asset = AVAsset(url: url)
+            let composition = applyFilterToComposition(filterKey: key, asset: asset)
             
+            guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                return
+            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .short
+            let date = dateFormatter.string(from: Date())
+            let exportUrl = documentDirectory.appendingPathComponent("reverseVideo-\(date).mov")
+            do { // delete old video
+                try FileManager.default.removeItem(at: exportUrl)
+            } catch { print(error.localizedDescription) }
+            
+            guard let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPreset1920x1080) else { return }
+            export.outputFileType = AVFileType.mov
+            export.outputURL = exportUrl
+            export.videoComposition = composition
+            
+            export.exportAsynchronously(completionHandler: {
+                switch export.status {
+                case .completed:
+                    completion(.success(exportUrl))
+                case .failed, .cancelled:
+                    completion(.failure(export.error as! Error))
+                    break
+                default:
+                    break
+                }
+            })
         } else {
             // Done Processing
         }
@@ -101,8 +130,24 @@ class EditorViewModel {
         return composition
     }
     
-    func applyFeatures() {
-      applyReverse()
+    func applyFeatures(completion: @escaping (Result<String ,Error>) -> Void) {
+        applySlowMo(to: videoUrl) { [self] result in
+            switch result {
+            case .success(let url):
+                SaveVideoToPhotos(url: url) { result in
+                    switch result {
+                    case .success(let message):
+                        completion(.success(message))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+                
+            case .failure(let error):
+                completion(.failure(error))
+                break
+            }
+        }
     }
     
     func exportVideo(withSpeed: Float, videoUrl: URL, completion: @escaping (Result<String, Error>) -> Void) {

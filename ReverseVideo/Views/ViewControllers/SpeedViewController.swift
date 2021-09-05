@@ -28,14 +28,16 @@ class SpeedViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setupCollectionView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if currentSpeed == 1.0 {
-            speedCollectionView.selectItem(at: IndexPath(row: 3, section: 0), animated: false, scrollPosition: .centeredHorizontally)
-        }
+        super.viewDidAppear(animated)
+        
+        setupCollectionView()
+        
+        speedCollectionView.selectItem(at: IndexPath(row: speedArray.firstIndex(of: currentSpeed) ?? 3, section: 0), animated: false, scrollPosition: .centeredHorizontally)
     }
+    
     // MARK: - IBActions
     @IBAction func tickButtonPressed() {
         delegate?.speedTickButtonTapped(viewController: self)

@@ -42,7 +42,6 @@ class EditorViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionViews()
-        createAndLoadInterstitial()
         setupBannerAd()
         setupVideoPlayer(videoUrl: viewModel.originalVideoUrl, to: videoView)
     }
@@ -54,7 +53,18 @@ class EditorViewController: UIViewController {
     
     // MARK - IBActions
     @IBAction func exportButtonTapped() {
+        showLoadingVC()
         
+        viewModel.applyFeatures { [self] result in
+            hideLoadingVC()
+            
+            switch result {
+            case .success(let url):
+                presentRVAlertOnMainThread(message: "Video saved sucessfully")
+            case .failure(let error):
+                presentRVAlertOnMainThread(message: error.localizedDescription)
+            }
+        }
 //        if interstitial != nil {
 //            isExportInterstitial = true
 //            interstitial.present(fromRootViewController: self)
@@ -86,7 +96,7 @@ class EditorViewController: UIViewController {
             if avplayer.status == .readyToPlay {
                 isPlaying ? videoTimelineView.stop() : videoTimelineView.play(atSpeed: viewModel.currentSpeed)
                 
-                if let filterKey = viewModel.currentFilterKey, let currentItem = avplayer.currentItem {
+                if let filterKey = viewModel.currentFilter?.key, let currentItem = avplayer.currentItem {
                     avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filterKey, asset: currentItem.asset)
                 }
                 
@@ -203,7 +213,9 @@ class EditorViewController: UIViewController {
     }
     
     func hideLoadingVC() {
-        loadingVC?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.loadingVC?.dismiss(animated: true, completion: nil)
+        }
     }
     
     func showLoading() {
@@ -262,9 +274,10 @@ extension EditorViewController: UICollectionViewDelegate, UICollectionViewDataSo
 //            featureVC.delegate = self
 //            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
         case 2:
-            let featureVC = storyboard?.instantiateViewController(identifier: FiltersViewController.identifier) as! FiltersViewController
-            featureVC.delegate = self
-            setContainerViewHidden(with: featureVC, isHidden: false, withAnimation: true)
+            let filtersVC = storyboard?.instantiateViewController(identifier: FiltersViewController.identifier) as! FiltersViewController
+            filtersVC.currentFilter = viewModel.currentFilter
+            filtersVC.delegate = self
+            setContainerViewHidden(with: filtersVC, isHidden: false, withAnimation: true)
 //        case 4:
 //            let featureVC = storyboard?.instantiateViewController(identifier: TextViewController.identifier) as! TextViewController
 //            featureVC.delegate = self
@@ -347,14 +360,14 @@ extension EditorViewController: FiltersViewControllerDelegate  {
         setContainerViewHidden(with: viewController, isHidden: true, withAnimation: true)
     }
     
-    func didSelectFilter(filterKey: String) {
+    func didSelectFilter(filter: FilterType) {
         let filtersFeature = viewModel.features.first(where: {$0.type == .filters})
         filtersFeature?.isApplied = true
         
-        viewModel.currentFilterKey = filterKey
+        viewModel.currentFilter = filter
         
         if let currentItem = avplayer.currentItem {
-            avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filterKey, asset: currentItem.asset)
+            avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filter.key, asset: currentItem.asset)
         }
     }
 }

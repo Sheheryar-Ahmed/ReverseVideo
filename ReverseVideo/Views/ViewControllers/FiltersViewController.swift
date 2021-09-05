@@ -9,7 +9,7 @@ import UIKit
 
 protocol FiltersViewControllerDelegate {
     func filtersTickButtonTapped(viewController: UIViewController)
-    func didSelectFilter(filterKey: String)
+    func didSelectFilter(filter: FilterType)
 }
 
 class FiltersViewController: UIViewController {
@@ -20,16 +20,26 @@ class FiltersViewController: UIViewController {
     // MARK: - Properties
     var delegate: FiltersViewControllerDelegate?
     var viewModel = FilterViewModel()
+    var currentFilter: FilterType?
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setupCollectionView()
+        
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupCollectionView()
+        
+        if let currentFilter = currentFilter, let index = viewModel.filterTypes.firstIndex(of: currentFilter) {
+        collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+        }
+    }
+   
     // MARK: - IBActions
     @IBAction func tickButtonPressed() {
         delegate?.filtersTickButtonTapped(viewController: self)
@@ -61,7 +71,7 @@ extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDel
     
     // Delegate Methods
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectFilter(filterKey: viewModel.filterTypes[indexPath.row].key)
+        delegate?.didSelectFilter(filter: viewModel.filterTypes[indexPath.row])
     }
     
     // FlowLayout methods
