@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.presentInAppViewController()
     }
 
     // MARK - IBActions
@@ -34,7 +36,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    func presentImagePicker(editingEnabled: Bool, sourceType: UIImagePickerController.SourceType) {
+    private func presentImagePicker(editingEnabled: Bool, sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.mediaTypes = [kUTTypeMovie as String]

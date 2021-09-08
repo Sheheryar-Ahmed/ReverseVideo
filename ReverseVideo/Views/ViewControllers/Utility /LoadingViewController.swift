@@ -27,7 +27,7 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.rvBlack?.withAlphaComponent(0.94)
+        view.backgroundColor = UIColor.rvBlack.withAlphaComponent(0.94)
         activityIndicator.startAnimating(in: self.view, style: .ballRotateChase)
         
         view.addSubview(textLabel)

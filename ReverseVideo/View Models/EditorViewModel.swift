@@ -106,7 +106,7 @@ class EditorViewModel {
                 }
             })
         } else {
-            // Done Processing
+            completion(.success(url))
         }
     }
     
