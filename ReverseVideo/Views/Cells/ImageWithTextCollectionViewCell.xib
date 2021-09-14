@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,13 +30,22 @@
                         <color key="textColor" red="1" green="0.99999994039999995" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-wg-lGV">
+                        <rect key="frame" x="45" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Gf4-Pe-OGs"/>
+                            <constraint firstAttribute="width" constant="20" id="UhH-DZ-sTc"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="iwi-wg-lGV" secondAttribute="trailing" constant="5" id="5Rc-PN-Ikf"/>
                 <constraint firstAttribute="trailing" secondItem="srO-kK-ZKk" secondAttribute="trailing" constant="4" id="Wjb-4g-790"/>
                 <constraint firstItem="S3N-7E-O6S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="XZc-Mk-uA3"/>
                 <constraint firstItem="srO-kK-ZKk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="gf4-3c-QjX"/>
+                <constraint firstItem="iwi-wg-lGV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ker-2n-tPX"/>
                 <constraint firstItem="S3N-7E-O6S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="p9g-Mg-04N"/>
                 <constraint firstItem="srO-kK-ZKk" firstAttribute="top" secondItem="S3N-7E-O6S" secondAttribute="bottom" constant="5" id="paw-hj-wXT"/>
                 <constraint firstAttribute="bottom" secondItem="srO-kK-ZKk" secondAttribute="bottom" constant="5" id="pnN-ab-nsm"/>
@@ -44,8 +53,12 @@
             <connections>
                 <outlet property="imageView" destination="S3N-7E-O6S" id="zOL-le-wOG"/>
                 <outlet property="label" destination="srO-kK-ZKk" id="Ibp-oT-99Y"/>
+                <outlet property="proImageView" destination="iwi-wg-lGV" id="exe-sO-ZcP"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="proIcon" width="512" height="512"/>
+    </resources>
 </document>

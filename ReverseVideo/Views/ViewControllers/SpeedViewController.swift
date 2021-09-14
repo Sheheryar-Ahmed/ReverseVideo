@@ -74,8 +74,13 @@ extension SpeedViewController: UICollectionViewDelegate, UICollectionViewDataSou
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         }
         
-        currentSpeed = speedArray[indexPath.row]
-        delegate?.didSelectSpeed(value: currentSpeed)        
+        if speedArray[indexPath.row] == 1 || speedArray[indexPath.row] == 0.75 {
+            delegate?.didSelectSpeed(value: currentSpeed)
+            currentSpeed = speedArray[indexPath.row]
+        } else {
+            self.presentInAppViewController()
+            collectionView.selectItem(at: IndexPath(row: 3, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        }
     }
     
     // FlowLayout Methods

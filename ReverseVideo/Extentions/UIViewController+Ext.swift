@@ -31,7 +31,7 @@ extension UIViewController {
     func presentInAppViewController() {
         DispatchQueue.main.async {
             guard let inAppVC = self.storyboard?.instantiateViewController(identifier: InAppPurchaseViewController.identifier) as? InAppPurchaseViewController else { return }
-            inAppVC.modalPresentationStyle = .fullScreen
+            inAppVC.modalPresentationStyle = .overFullScreen
             self.present(inAppVC, animated: true, completion: nil)
         }
     }

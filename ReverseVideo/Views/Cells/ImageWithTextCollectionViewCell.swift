@@ -13,11 +13,18 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var proImageView: UIImageView!
     
     // MARK: - Properties
     override var isSelected: Bool {
         didSet {
             label.textColor = isSelected ? .rvOrange : .white
+        }
+    }
+    
+    var isPro: Bool = false {
+        didSet {
+            proImageView.isHidden = !isPro
         }
     }
     
@@ -32,6 +39,8 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
     private func configure() {
         imageView.layer.cornerRadius = 15
         self.clipsToBounds = true
+        proImageView.layer.cornerRadius = 10
+        proImageView.backgroundColor = .rvOrange
     }
 
 }

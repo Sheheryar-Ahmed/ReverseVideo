@@ -36,10 +36,10 @@ class FiltersViewController: UIViewController {
         setupCollectionView()
         
         if let currentFilter = currentFilter, let index = viewModel.filterTypes.firstIndex(of: currentFilter) {
-        collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+            collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .centeredHorizontally)
         }
     }
-   
+    
     // MARK: - IBActions
     @IBAction func tickButtonPressed() {
         delegate?.filtersTickButtonTapped(viewController: self)
@@ -55,6 +55,7 @@ class FiltersViewController: UIViewController {
 }
 
 extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     // Data Source Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.filterTypes.count
@@ -66,12 +67,20 @@ extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDel
         let filterName = viewModel.filterTypes[indexPath.row].name
         cell.imageView.image = UIImage(named: "filters/" +  filterName)?.resizeImage(newHeight: 200) ?? UIImage.filterIcon
         cell.label.text = filterName
+        cell.isPro = viewModel.filterTypes[indexPath.row].isPro
         return cell
     }
     
     // Delegate Methods
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectFilter(filter: viewModel.filterTypes[indexPath.row])
+        let filter = viewModel.filterTypes[indexPath.row]
+        
+        if filter.isPro {
+            self.presentInAppViewController()
+            collectionView.deselectItem(at: indexPath, animated: false)
+        } else {
+            delegate?.didSelectFilter(filter: viewModel.filterTypes[indexPath.row])
+        }
     }
     
     // FlowLayout methods

@@ -22,6 +22,37 @@ enum FilterType {
     case PhotoEffectTransfer
     case SepiaTone
     
+    var isPro: Bool {
+        switch self {
+        case .ColorCrossPolynomial:
+            return false
+        case .ColorCube:
+            return true
+        case .ColorCubeWithColorSpace:
+            return true
+        case .ColorMonochrome:
+            return true
+        case .PhotoEffectChrome:
+            return true
+        case .PhotoEffectFade:
+            return true
+        case .PhotoEffectInstant:
+            return true
+        case .PhotoEffectMono:
+            return true
+        case .PhotoEffectNoir:
+            return true
+        case .PhotoEffectProcess:
+            return true
+        case .PhotoEffectTonal:
+            return true
+        case .PhotoEffectTransfer:
+            return true
+        case .SepiaTone:
+            return true
+        }
+    }
+    
     var key: String {
         switch self {
         case .ColorCrossPolynomial:

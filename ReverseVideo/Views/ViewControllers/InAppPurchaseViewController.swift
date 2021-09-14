@@ -44,9 +44,15 @@ class InAppPurchaseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupUI()
+        addShadow()
         
     }
 
+    // MARK: - IBActions
+    @IBAction func crossButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Private Methods
     private func setupUI() {
         weeklyContainerView.layer.borderWidth = 2
@@ -70,5 +76,39 @@ class InAppPurchaseViewController: UIViewController {
         continueButton.layer.cornerRadius = 10
         
 //        setSelectedBorderColor(for: selectedProductID)
+    }
+    private func addShadow() {
+        let gradientLayer = CAGradientLayer.init()
+        gradientLayer.frame = shadowView.bounds
+        
+        gradientLayer.colors = [UIColor.rvBlack.cgColor, UIColor.clear.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0)
+
+        shadowView.layer.addSublayer(gradientLayer)
+    }
+    
+    private func setSelectedBorderColor(for productID: String) {
+//        if productID == BGCConstants.AppPurchaseProductIDs.weeklyProduct {
+//            weeklyContainerView.layer.borderColor = UIColor.bgcBlue.cgColor
+//            yearlyContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            lifeTimeContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            freeTrialYearlyLabel.backgroundColor = .bgcDarkGray
+//            yearlySavelabel.backgroundColor = .bgcDarkGray
+//
+//        } else if productID == BGCConstants.AppPurchaseProductIDs.yearlyProduct {
+//            yearlyContainerView.layer.borderColor = UIColor.bgcBlue.cgColor
+//            weeklyContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            lifeTimeContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            freeTrialYearlyLabel.backgroundColor = .bgcBlue
+//            yearlySavelabel.backgroundColor = .bgcBlue
+//
+//        } else if productID == BGCConstants.AppPurchaseProductIDs.oneTimeProduct {
+//            lifeTimeContainerView.layer.borderColor = UIColor.bgcBlue.cgColor
+//            weeklyContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            yearlyContainerView.layer.borderColor = UIColor.bgcDarkGray.cgColor
+//            freeTrialYearlyLabel.backgroundColor = .bgcDarkGray
+//            yearlySavelabel.backgroundColor = .bgcDarkGray
+//        }
     }
 }
