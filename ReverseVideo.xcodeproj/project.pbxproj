@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D428760D77749FBB592A182 /* Pods_ReverseVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */; };
 		89FA20C226E8E8A40080F43F /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */; };
-		D6C325F6701DAE529B04C128 /* Pods_ReverseVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */; };
 		FA03670025DED2DE0073704D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39B55925D17CF900DB7D54 /* Main.storyboard */; };
 		FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671525DED3F10073704D /* CustomPickerView.swift */; };
 		FA03671825DED3F20073704D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671625DED3F10073704D /* ButtonView.swift */; };
@@ -50,6 +50,13 @@
 		FABA1DAE26482FE300644633 /* FeaturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1DAC26482FE300644633 /* FeaturesCollectionViewCell.swift */; };
 		FABA1DAF26482FE300644633 /* FeaturesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABA1DAD26482FE300644633 /* FeaturesCollectionViewCell.xib */; };
 		FABA1DB42648305100644633 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA1DB32648305100644633 /* EditorViewModel.swift */; };
+		FAD8F69626F62CCA009BB820 /* premium1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAD8F69426F62CCA009BB820 /* premium1.mp4 */; };
+		FAD8F69726F62CCA009BB820 /* premium.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAD8F69526F62CCA009BB820 /* premium.mp4 */; };
+		FAD8F69A26F62D8D009BB820 /* InAppPurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8F69926F62D8D009BB820 /* InAppPurchaseViewModel.swift */; };
+		FAD8F69C26FFAC32009BB820 /* premium2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAD8F69B26FFAC32009BB820 /* premium2.mp4 */; };
+		FAD8F6A027006F56009BB820 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8F69F27006F56009BB820 /* GlobalData.swift */; };
+		FAD8F6A22700B1BD009BB820 /* SKProduct+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */; };
+		FAD8F6A5270122E4009BB820 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8F6A4270122E4009BB820 /* StoreKit.framework */; };
 		FAE35D0826899446003FCAFB /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE35D0726899446003FCAFB /* FilterViewModel.swift */; };
 		FAE35D0B268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE35D09268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift */; };
 		FAE35D0C268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */; };
@@ -57,10 +64,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.release.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.release.xcconfig"; sourceTree = "<group>"; };
+		01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58ED693A27FC08077B174327 /* Pods-ReverseVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.debug.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
-		E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.debug.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.debug.xcconfig"; sourceTree = "<group>"; };
-		EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF677CE6E531925AF049F238 /* Pods-ReverseVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.release.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.release.xcconfig"; sourceTree = "<group>"; };
 		FA03671525DED3F10073704D /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		FA03671625DED3F10073704D /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FA03671B25DED3F70073704D /* SpeedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeedCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -104,6 +111,13 @@
 		FABA1DAC26482FE300644633 /* FeaturesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FABA1DAD26482FE300644633 /* FeaturesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturesCollectionViewCell.xib; sourceTree = "<group>"; };
 		FABA1DB32648305100644633 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
+		FAD8F69426F62CCA009BB820 /* premium1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = premium1.mp4; sourceTree = "<group>"; };
+		FAD8F69526F62CCA009BB820 /* premium.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = premium.mp4; sourceTree = "<group>"; };
+		FAD8F69926F62D8D009BB820 /* InAppPurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewModel.swift; sourceTree = "<group>"; };
+		FAD8F69B26FFAC32009BB820 /* premium2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = premium2.mp4; sourceTree = "<group>"; };
+		FAD8F69F27006F56009BB820 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+Ext.swift"; sourceTree = "<group>"; };
+		FAD8F6A4270122E4009BB820 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FAE35D0726899446003FCAFB /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		FAE35D09268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageWithTextCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -115,7 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C325F6701DAE529B04C128 /* Pods_ReverseVideo.framework in Frameworks */,
+				FAD8F6A5270122E4009BB820 /* StoreKit.framework in Frameworks */,
+				6D428760D77749FBB592A182 /* Pods_ReverseVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +140,8 @@
 		325DD9C767E3E94923E632C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */,
-				24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */,
+				58ED693A27FC08077B174327 /* Pods-ReverseVideo.debug.xcconfig */,
+				DF677CE6E531925AF049F238 /* Pods-ReverseVideo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -134,7 +149,8 @@
 		8F8F32FE4228997C2FF19478 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC6C48945BE83343D8B06E8C /* Pods_ReverseVideo.framework */,
+				FAD8F6A4270122E4009BB820 /* StoreKit.framework */,
+				01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +196,7 @@
 				FA03672F25DED4E30073704D /* UIColor+Ext.swift */,
 				FA03673025DED4E30073704D /* UIViewController+Ext.swift */,
 				FA03673125DED4E30073704D /* UIView+Ext.swift */,
+				FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -241,6 +258,7 @@
 		FA39B55225D17CF900DB7D54 /* ReverseVideo */ = {
 			isa = PBXGroup;
 			children = (
+				FAD8F69226F62C8F009BB820 /* Assets */,
 				FA23EC08266350C800695367 /* Third Party */,
 				FA4D937D25DED85F009F1127 /* Support */,
 				FA03672D25DED4E30073704D /* Extentions */,
@@ -256,7 +274,6 @@
 		FA4D937D25DED85F009F1127 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				FA4D937E25DED85F009F1127 /* Assets.xcassets */,
 				FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */,
 				FA29E8B52619A2AC001253F3 /* GoogleService-Info.plist */,
 				FA4D938125DED85F009F1127 /* AppDelegate.swift */,
@@ -303,6 +320,7 @@
 			children = (
 				FA72072B26D684D2005FC86E /* FeatureType.swift */,
 				FA72072D26D68525005FC86E /* FilterType.swift */,
+				FAD8F69F27006F56009BB820 /* GlobalData.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -313,8 +331,28 @@
 			children = (
 				FABA1DB32648305100644633 /* EditorViewModel.swift */,
 				FAE35D0726899446003FCAFB /* FilterViewModel.swift */,
+				FAD8F69926F62D8D009BB820 /* InAppPurchaseViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		FAD8F69226F62C8F009BB820 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FA4D937E25DED85F009F1127 /* Assets.xcassets */,
+				FAD8F69326F62C99009BB820 /* Videos */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAD8F69326F62C99009BB820 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				FAD8F69526F62CCA009BB820 /* premium.mp4 */,
+				FAD8F69B26FFAC32009BB820 /* premium2.mp4 */,
+				FAD8F69426F62CCA009BB820 /* premium1.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 		FAE35D0D2689A2A3003FCAFB /* VideoGenerator */ = {
@@ -333,11 +371,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA39B56425D17CFD00DB7D54 /* Build configuration list for PBXNativeTarget "ReverseVideo" */;
 			buildPhases = (
-				D10D4CFD25B6BC711830222E /* [CP] Check Pods Manifest.lock */,
+				B079AEE207120A5EB9C158BC /* [CP] Check Pods Manifest.lock */,
 				FA39B54C25D17CF900DB7D54 /* Sources */,
 				FA39B54D25D17CF900DB7D54 /* Frameworks */,
 				FA39B54E25D17CF900DB7D54 /* Resources */,
-				644E534F10E148D55BE401B5 /* [CP] Embed Pods Frameworks */,
+				52ABB9F000EC9615073BCAF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,9 +423,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD8F69726F62CCA009BB820 /* premium.mp4 in Resources */,
 				FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */,
 				FA03671D25DED3F70073704D /* SpeedCollectionViewCell.xib in Resources */,
 				FA29E8B62619A2AC001253F3 /* GoogleService-Info.plist in Resources */,
+				FAD8F69C26FFAC32009BB820 /* premium2.mp4 in Resources */,
+				FAD8F69626F62CCA009BB820 /* premium1.mp4 in Resources */,
 				FAE35D0C268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib in Resources */,
 				FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */,
 				FA03670025DED2DE0073704D /* Main.storyboard in Resources */,
@@ -398,7 +439,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		644E534F10E148D55BE401B5 /* [CP] Embed Pods Frameworks */ = {
+		52ABB9F000EC9615073BCAF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,7 +456,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D10D4CFD25B6BC711830222E /* [CP] Check Pods Manifest.lock */ = {
+		B079AEE207120A5EB9C158BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -449,6 +490,7 @@
 				FAE35D0826899446003FCAFB /* FilterViewModel.swift in Sources */,
 				FA6D1256268F61A2007ED08B /* ColorCubeHelper.swift in Sources */,
 				FAE35D102689A31A003FCAFB /* CIFilter+Extension.swift in Sources */,
+				FAD8F6A22700B1BD009BB820 /* SKProduct+Ext.swift in Sources */,
 				FA03673425DED4E30073704D /* UIViewController+Ext.swift in Sources */,
 				FA03672A25DED4D90073704D /* VideoGeneratorError.swift in Sources */,
 				FA03671E25DED3F70073704D /* SpeedCollectionViewCell.swift in Sources */,
@@ -458,6 +500,7 @@
 				FA2F87262602333F0006458C /* RVConstants.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
 				FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */,
+				FAD8F69A26F62D8D009BB820 /* InAppPurchaseViewModel.swift in Sources */,
 				FA23EC12266350EF00695367 /* FrameImagesView.swift in Sources */,
 				FABA1DB42648305100644633 /* EditorViewModel.swift in Sources */,
 				FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */,
@@ -467,6 +510,7 @@
 				FA23EC16266350EF00695367 /* TimelineScroller.swift in Sources */,
 				FABA1DAE26482FE300644633 /* FeaturesCollectionViewCell.swift in Sources */,
 				FA49CB74266234080090948B /* SpeedViewController.swift in Sources */,
+				FAD8F6A027006F56009BB820 /* GlobalData.swift in Sources */,
 				FA72072826CE7B89005FC86E /* LoadingViewController.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
@@ -626,12 +670,12 @@
 		};
 		FA39B56525D17CFD00DB7D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69DD3AD646F6268AF21110F /* Pods-ReverseVideo.debug.xcconfig */;
+			baseConfigurationReference = 58ED693A27FC08077B174327 /* Pods-ReverseVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H5K3P8XL9A;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -639,6 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -709,12 +754,12 @@
 		};
 		FA39B56625D17CFD00DB7D54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24600ECFDF8AB72BD1FC95D0 /* Pods-ReverseVideo.release.xcconfig */;
+			baseConfigurationReference = DF677CE6E531925AF049F238 /* Pods-ReverseVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H5K3P8XL9A;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -722,6 +767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",

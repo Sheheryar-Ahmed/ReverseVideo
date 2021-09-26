@@ -1041,24 +1041,24 @@ public class VideoGenerator: NSObject {
         let compositionVideoTrack = mixComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)
         
         /// Audio Tracks
-        let audioTracks = asset.tracks(withMediaType: AVMediaType.audio)
-        if audioTracks.count > 0 {
-            /// Use audio if video contains the audio track
-            let compositionAudioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
-            
-            /// Audio track
-            let audioTrack = audioTracks.first!
-            do {
-                try compositionAudioTrack?.insertTimeRange(timeRange, of: audioTrack, at: CMTime.zero)
-                let destinationTimeRange = CMTimeMultiplyByFloat64(asset.duration, multiplier:(1/scale))
-                compositionAudioTrack?.scaleTimeRange(timeRange, toDuration: destinationTimeRange)
-                
-                compositionAudioTrack?.preferredTransform = audioTrack.preferredTransform
-                
-            } catch _ {
-                /// Ignore audio error
-            }
-        }
+//        let audioTracks = asset.tracks(withMediaType: AVMediaType.audio)
+//        if audioTracks.count > 0 {
+//            /// Use audio if video contains the audio track
+//            let compositionAudioTrack = mixComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+//
+//            /// Audio track
+//            let audioTrack = audioTracks.first!
+//            do {
+//                try compositionAudioTrack?.insertTimeRange(timeRange, of: audioTrack, at: CMTime.zero)
+//                let destinationTimeRange = CMTimeMultiplyByFloat64(asset.duration, multiplier:(1/scale))
+//                compositionAudioTrack?.scaleTimeRange(timeRange, toDuration: destinationTimeRange)
+//
+//                compositionAudioTrack?.preferredTransform = audioTrack.preferredTransform
+//
+//            } catch _ {
+//                /// Ignore audio error
+//            }
+//        }
         
         do {
             try compositionVideoTrack?.insertTimeRange(timeRange, of: videoTrack, at: CMTime.zero)
@@ -1068,6 +1068,17 @@ public class VideoGenerator: NSObject {
             /// Keep original transformation
             compositionVideoTrack?.preferredTransform = videoTrack.preferredTransform
             
+            if videoTrack.preferredTransform != .identity {
+                let transform = videoTrack.preferredTransform
+                let rotation = atan2(Double(transform.b), Double(transform.a))
+                
+                if rotation.magnitude.isLess(than: 2.0) && rotation.magnitude > 1.0 {
+                    // fixed size as transform changes size
+                    mixComposition.naturalSize = CGSize(width: compositionVideoTrack!.naturalSize.height, height: compositionVideoTrack!.naturalSize.width)
+                }
+            }
+                
+       
             //Create Directory path for Save
             let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             var outputURL = documentDirectory.appendingPathComponent("SpeedVideo")

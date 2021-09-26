@@ -94,7 +94,7 @@ enum FilterType {
         case .ColorCubeWithColorSpace:
             return "ColorSpace"
         case .ColorMonochrome:
-            return "Monochrome"
+            return "MChrome"
         case .PhotoEffectChrome:
             return "Chrome"
         case .PhotoEffectFade:

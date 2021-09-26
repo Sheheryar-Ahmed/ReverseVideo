@@ -20,5 +20,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DC3ADF0-5810-4277-9C3F-AECE22681C1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReverseVideo/Views/ViewControllers/InAppPurchaseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "alreadyPaidTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5580042-4677-4E7D-9F4B-7BFBB5DD7B33"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReverseVideo/Views/ViewControllers/InAppPurchaseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "continueButtonTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5580042-4677-4E7D-9F4B-7BFBB5DD7B33 - 9755ca9aa7998e0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;__C.SKPaymentTransaction&gt;, Swift.Optional&lt;__C.RCPurchaserInfo&gt;, Swift.Optional&lt;Swift.Error&gt;, Swift.Bool) -&gt; () in ReverseVideo.InAppPurchaseViewController.continueButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "ReverseVideo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Desktop/IOS%20Projects/Reverse%20Video/ReverseVideo/Views/ViewControllers/InAppPurchaseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "1168">
+               </Location>
+               <Location
+                  uuid = "B5580042-4677-4E7D-9F4B-7BFBB5DD7B33 - 1ae409b15b0ca519"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.Optional&lt;__C.SKPaymentTransaction&gt;, Swift.Optional&lt;__C.RCPurchaserInfo&gt;, Swift.Optional&lt;Swift.Error&gt;, Swift.Bool) -&gt; () in ReverseVideo.InAppPurchaseViewController.continueButtonTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "ReverseVideo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Desktop/IOS%20Projects/Reverse%20Video/ReverseVideo/Views/ViewControllers/InAppPurchaseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

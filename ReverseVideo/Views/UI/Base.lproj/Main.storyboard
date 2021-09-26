@@ -92,7 +92,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose from library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt8-cP-AOI">
                                         <rect key="frame" x="92" y="9.5" width="150" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WVf-aA-kdp">
@@ -165,6 +165,23 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonTapped" destination="poc-M7-Klr" eventType="touchUpInside" id="okq-1v-SvW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OU-cw-DP6">
+                                <rect key="frame" x="314" y="64" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.34901960784313724" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bq1-9E-4XA"/>
+                                    <constraint firstAttribute="width" constant="30" id="tMq-Qe-yMb"/>
+                                </constraints>
+                                <state key="normal" image="proIcon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="premiumIconTapped:" destination="poc-M7-Klr" eventType="touchUpInside" id="bOa-SQ-x3N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2f-xa-6ku" customClass="CircularButton" customModule="ReverseVideo" customModuleProvider="target">
@@ -269,6 +286,7 @@
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="rjS-Eh-oic" secondAttribute="trailing" id="bW0-sM-7hM"/>
                             <constraint firstItem="SBH-iw-w12" firstAttribute="leading" secondItem="fpi-3I-v0d" secondAttribute="leading" id="dKy-Gf-xQ1"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="SBH-iw-w12" secondAttribute="trailing" id="hZz-qC-CaH"/>
+                            <constraint firstItem="c2f-xa-6ku" firstAttribute="leading" secondItem="4OU-cw-DP6" secondAttribute="trailing" constant="20" id="i8q-uW-x59"/>
                             <constraint firstItem="c2f-xa-6ku" firstAttribute="top" secondItem="fpi-3I-v0d" secondAttribute="top" constant="20" id="iSh-Z2-BOf"/>
                             <constraint firstItem="rjS-Eh-oic" firstAttribute="leading" secondItem="fpi-3I-v0d" secondAttribute="leading" id="j5x-1U-yJr"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="c2f-xa-6ku" secondAttribute="trailing" constant="20" id="oK3-Ct-NTU"/>
@@ -276,6 +294,7 @@
                             <constraint firstItem="KUe-Ta-996" firstAttribute="top" secondItem="rjS-Eh-oic" secondAttribute="bottom" id="sn6-R9-u5n"/>
                             <constraint firstItem="Cmn-Km-u3J" firstAttribute="top" secondItem="fpi-3I-v0d" secondAttribute="top" constant="20" id="v6C-B5-CRg"/>
                             <constraint firstItem="fpi-3I-v0d" firstAttribute="trailing" secondItem="kgh-Zb-7IK" secondAttribute="trailing" id="wnB-OY-gzF"/>
+                            <constraint firstItem="4OU-cw-DP6" firstAttribute="top" secondItem="fpi-3I-v0d" secondAttribute="top" constant="20" id="y6R-sB-taS"/>
                             <constraint firstAttribute="trailing" secondItem="sle-LW-lDQ" secondAttribute="trailing" id="yGk-fh-Bc0"/>
                         </constraints>
                     </view>
@@ -286,6 +305,7 @@
                         <outlet property="containerViewHeightConstraint" destination="qqa-r4-0W0" id="a2f-rb-dAX"/>
                         <outlet property="featuresCollectionView" destination="kgh-Zb-7IK" id="SFS-BV-YSc"/>
                         <outlet property="playButton" destination="Efb-ut-bPC" id="Exg-SZ-oOI"/>
+                        <outlet property="premiumIconButton" destination="4OU-cw-DP6" id="iB4-p6-lD9"/>
                         <outlet property="videoControllerViewBottomConstraint" destination="PKE-cA-e7N" id="tHb-aU-tem"/>
                         <outlet property="videoTimelineView" destination="oIt-IZ-gIS" id="JY0-Od-eQY"/>
                         <outlet property="videoView" destination="rjS-Eh-oic" id="SEY-X5-weT"/>
@@ -554,12 +574,18 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q27-Kg-bWG">
                                         <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="OgB-Ed-T01"/>
                                             <constraint firstAttribute="height" constant="40" id="qlF-SR-kPr"/>
                                         </constraints>
                                         <color key="tintColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="xmark" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="crossButtonTapped:" destination="e6d-Z9-39b" eventType="touchUpInside" id="Z4O-JN-0Ey"/>
                                         </connections>
@@ -700,7 +726,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-4y-DIh">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="102"/>
                                                 <connections>
-                                                    <action selector="weeklyDealButtonPressed:" destination="e6d-Z9-39b" eventType="touchUpInside" id="imq-SM-vRo"/>
+                                                    <action selector="weeklyPackageSelected:" destination="e6d-Z9-39b" eventType="touchUpInside" id="VWZ-K2-FLP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -723,7 +749,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-sQ-LSa">
                                                 <rect key="frame" x="5" y="5" width="83" height="92"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-Hm-Var">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgh-Hm-Var">
                                                         <rect key="frame" x="16" y="19" width="51" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="3HS-AN-Kvs"/>
@@ -756,7 +782,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XW-Ho-keq">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="102"/>
                                                 <connections>
-                                                    <action selector="lifeTimeDealButtonPressed:" destination="e6d-Z9-39b" eventType="touchUpInside" id="21E-6j-1Gb"/>
+                                                    <action selector="monthlyPackageSelected:" destination="e6d-Z9-39b" eventType="touchUpInside" id="hPO-ce-LZa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -866,7 +892,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gT-AZ-FXT">
                                                 <rect key="frame" x="0.0" y="0.0" width="135" height="156"/>
                                                 <connections>
-                                                    <action selector="yearlyDealButtonPressed:" destination="e6d-Z9-39b" eventType="touchUpInside" id="hRs-hY-acS"/>
+                                                    <action selector="yearlyPackageSelected:" destination="e6d-Z9-39b" eventType="touchUpInside" id="A9g-oz-3Cv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -904,8 +930,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <state key="normal" title="Privacy Policy">
-                                    <color key="titleColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="privacyPolicyTapped:" destination="e6d-Z9-39b" eventType="touchUpInside" id="uv7-Gq-w0l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btN-Jc-uMw">
                                 <rect key="frame" x="309" y="843" width="69" height="9"/>
@@ -914,19 +943,26 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <state key="normal" title="Terms of use">
-                                    <color key="titleColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="termsOfUseTapped:" destination="e6d-Z9-39b" eventType="touchUpInside" id="D1w-sX-xvt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oh7-24-jrf">
                                 <rect key="frame" x="61.5" y="771" width="291" height="57"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.34901960784313724" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="EEp-WH-dMo"/>
                                     <constraint firstAttribute="width" constant="291" id="FUi-qm-pw3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Continue">
-                                    <color key="titleColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="e6d-Z9-39b" eventType="touchUpInside" id="246-ki-eJe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh7-cU-z6C">
                                 <rect key="frame" x="169.5" y="843" width="75" height="9"/>
@@ -935,8 +971,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                 <state key="normal" title="Already Paid?">
-                                    <color key="titleColor" red="0.94509803920000002" green="0.34901960780000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="alreadyPaidTapped:" destination="e6d-Z9-39b" eventType="touchUpInside" id="CWL-Y8-9BN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get PRO Access" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1I-WR-nKB">
                                 <rect key="frame" x="20" y="423" width="189" height="40"/>
@@ -977,10 +1016,10 @@
                         <outlet property="allDealsContainerView" destination="y4O-ce-PZ5" id="nyB-xe-8w6"/>
                         <outlet property="continueButton" destination="oh7-24-jrf" id="J94-Gb-mQj"/>
                         <outlet property="freeTrialYearlyLabel" destination="w3j-lx-pgc" id="kjr-IA-fIe"/>
-                        <outlet property="lifeTimeContainerView" destination="gfq-lj-KjT" id="Ux8-vT-2y3"/>
-                        <outlet property="lifeTimeLabel" destination="Zgh-Hm-Var" id="Yhj-mo-LYe"/>
-                        <outlet property="lifeTimeSubContainerView" destination="qS2-sQ-LSa" id="f3e-WS-4Rw"/>
-                        <outlet property="lifetimePriceLabel" destination="hTA-Q8-WWA" id="EPv-Uv-Fs8"/>
+                        <outlet property="monthlyContainerView" destination="gfq-lj-KjT" id="w7j-B5-Kid"/>
+                        <outlet property="monthlyLabel" destination="Zgh-Hm-Var" id="zY3-sH-dTU"/>
+                        <outlet property="monthlyPriceLabel" destination="hTA-Q8-WWA" id="02Y-eJ-z9e"/>
+                        <outlet property="monthlySubContainerView" destination="qS2-sQ-LSa" id="uZh-Ke-P6F"/>
                         <outlet property="shadowView" destination="ZUT-ne-tDV" id="Hji-lu-aMN"/>
                         <outlet property="twelveMonthsLabel" destination="c7K-Ms-1Ey" id="cQq-nv-uiL"/>
                         <outlet property="videoView" destination="abA-8F-ZdR" id="EAm-wQ-Rsm"/>
@@ -1008,6 +1047,7 @@
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="iconWithText" width="1025" height="1024"/>
         <image name="play" width="64" height="64"/>
+        <image name="proIcon" width="512" height="512"/>
         <image name="tick" width="601" height="586"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

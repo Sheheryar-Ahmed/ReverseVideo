@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMobileAds
 import Firebase
+import Purchases
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initializing firebase
         FirebaseApp.configure()
+        
+        // initializing RevenueCat
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: RVConstants.InAppPurchase.revenueCatApiKey)
+        
+        // check if user is Premium
+        Purchases.shared.purchaserInfo { (purchaserInfo, error) in
+            if purchaserInfo?.entitlements.all["pro"]?.isActive == true {
+                GlobalData.isPro = true
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
         return true
     }
 

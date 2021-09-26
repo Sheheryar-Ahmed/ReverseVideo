@@ -67,7 +67,7 @@ extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDel
         let filterName = viewModel.filterTypes[indexPath.row].name
         cell.imageView.image = UIImage(named: "filters/" +  filterName)?.resizeImage(newHeight: 200) ?? UIImage.filterIcon
         cell.label.text = filterName
-        cell.isPro = viewModel.filterTypes[indexPath.row].isPro
+        cell.isPro = viewModel.filterTypes[indexPath.row].isPro && !GlobalData.isPro
         return cell
     }
     
@@ -75,7 +75,7 @@ extension FiltersViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filter = viewModel.filterTypes[indexPath.row]
         
-        if filter.isPro {
+        if filter.isPro && !GlobalData.isPro {
             self.presentInAppViewController()
             collectionView.deselectItem(at: indexPath, animated: false)
         } else {

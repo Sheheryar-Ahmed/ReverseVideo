@@ -23,6 +23,7 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var featuresCollectionView: UICollectionView!
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var premiumIconButton: UIButton!
     
     // MARK: - Properties
     var avplayer = AVPlayer()
@@ -44,6 +45,7 @@ class EditorViewController: UIViewController {
         setupCollectionViews()
         setupBannerAd()
         setupVideoPlayer(videoUrl: viewModel.originalVideoUrl, to: videoView)
+        premiumIconButton.isHidden = GlobalData.isPro
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +54,10 @@ class EditorViewController: UIViewController {
     }
     
     // MARK - IBActions
+    @IBAction func premiumIconTapped(_ sender: UIButton) {
+        self.presentInAppViewController()
+    }
+    
     @IBAction func exportButtonTapped() {
         showLoadingVC()
         
@@ -182,16 +188,6 @@ class EditorViewController: UIViewController {
         avplayer.isMuted = true
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         
-        // move the player to the end of duartion so that in reverse mode video will start from start
-        
-//        let duratTime: CMTime = (avplayer.currentItem?.asset.duration)!
-//        if CMTIME_IS_VALID(duratTime) {
-//            avplayer.seek(to: duratTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-//            videoTimelineView.moveTo(Float64(duratTime.seconds), animate: false)
-//        }
-//        else {
-//            print("In valid time")
-//        }
         videoTimelineView.new(asset:AVAsset(url: videoUrl))
         videoTimelineView.setTrimmerIsHidden(true)
         videoTimelineView.setTrimIsEnabled(false)
@@ -201,6 +197,11 @@ class EditorViewController: UIViewController {
         
         if isPlaying {
             videoTimelineView.play(atSpeed: viewModel.currentSpeed)
+        }
+        
+        
+        if let filter = viewModel.currentFilter, let currentItem = avplayer.currentItem {
+            avplayer.currentItem?.videoComposition = viewModel.applyFilterToComposition(filterKey: filter.key, asset: currentItem.asset)
         }
     }
     

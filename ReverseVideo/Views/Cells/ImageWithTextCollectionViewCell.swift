@@ -22,7 +22,7 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var isPro: Bool = false {
+    var isPro: Bool = true {
         didSet {
             proImageView.isHidden = !isPro
         }

@@ -28,4 +28,18 @@ struct RVConstants {
             #endif
         }
      }
+    
+    struct InAppPurchase {
+        static let sharedSecret = "50f493eb35e94b21ac9aabf8d6eb1a92"
+        static let revenueCatApiKey = "igphqSiOtQyakrAaUaFrPCTwMBlDWsBU"
+        
+        static let weeklyPackageID = "$rc_weekly"
+        static let monthlyPackageID = "$rc_monthly"
+        static let yearlyPackageID = "$rc_annual"
+    }
+    
+    struct URLs {
+        static let privacyPolicy = "https://thesheheryarahmed.com/reverse-video-privacy-policy/"
+        static let termsOfUse = "https://thesheheryarahmed.com/reverse-video-privacy-policy/"
+    }
 }
