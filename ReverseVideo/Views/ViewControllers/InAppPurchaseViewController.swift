@@ -12,8 +12,10 @@ import Purchases
 class InAppPurchaseViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var crossButton: UIButton!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet var tickIcons: [UIImageView]!
     
     @IBOutlet weak var allDealsContainerView: UIView!
     @IBOutlet weak var weeklyContainerView: UIView!
@@ -158,6 +160,13 @@ class InAppPurchaseViewController: UIViewController {
         continueButton.layer.cornerRadius = 10
         
         setSelectedBorderColor(for: viewModel.selectedPackageID)
+        
+        crossButton.tintColor = .rvThemeAlpha
+        continueButton.backgroundColor = .rvThemeAlpha
+        
+        tickIcons.forEach { tickIcon in
+            tickIcon.tintColor = .rvThemeAlpha
+        }
     }
     
     private func addShadow() {
@@ -210,21 +219,21 @@ class InAppPurchaseViewController: UIViewController {
     
     private func setSelectedBorderColor(for packageID: String) {
         if packageID == RVConstants.InAppPurchase.weeklyPackageID {
-            weeklyContainerView.layer.borderColor = UIColor.rvOrange.cgColor
+            weeklyContainerView.layer.borderColor = UIColor.rvThemeAlpha.cgColor
             yearlyContainerView.layer.borderColor = UIColor.rvGray.cgColor
             monthlyContainerView.layer.borderColor = UIColor.rvGray.cgColor
             freeTrialYearlyLabel.backgroundColor = .rvGray
             yearlySavelabel.backgroundColor = .rvGray
             
         } else if packageID == RVConstants.InAppPurchase.yearlyPackageID {
-            yearlyContainerView.layer.borderColor = UIColor.rvOrange.cgColor
+            yearlyContainerView.layer.borderColor = UIColor.rvThemeAlpha.cgColor
             weeklyContainerView.layer.borderColor = UIColor.rvGray.cgColor
             monthlyContainerView.layer.borderColor = UIColor.rvGray.cgColor
-            freeTrialYearlyLabel.backgroundColor = .rvOrange
-            yearlySavelabel.backgroundColor = .rvOrange
+            freeTrialYearlyLabel.backgroundColor = .rvThemeAlpha
+            yearlySavelabel.backgroundColor = .rvThemeAlpha
             
         } else if packageID == RVConstants.InAppPurchase.monthlyPackageID  {
-            monthlyContainerView.layer.borderColor = UIColor.rvOrange.cgColor
+            monthlyContainerView.layer.borderColor = UIColor.rvThemeAlpha.cgColor
             weeklyContainerView.layer.borderColor = UIColor.rvGray.cgColor
             yearlyContainerView.layer.borderColor = UIColor.rvGray.cgColor
             freeTrialYearlyLabel.backgroundColor = .rvGray

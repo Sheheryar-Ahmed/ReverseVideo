@@ -20,6 +20,13 @@
 		FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03672F25DED4E30073704D /* UIColor+Ext.swift */; };
 		FA03673425DED4E30073704D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03673025DED4E30073704D /* UIViewController+Ext.swift */; };
 		FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03673125DED4E30073704D /* UIView+Ext.swift */; };
+		FA1259BE27132F9E00E58EAE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1259BD27132F9E00E58EAE /* GalleryViewController.swift */; };
+		FA1259C02713327E00E58EAE /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1259BF2713327E00E58EAE /* GalleryViewModel.swift */; };
+		FA1259C32713346A00E58EAE /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1259C22713346A00E58EAE /* Album.swift */; };
+		FA1259C62713698B00E58EAE /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1259C42713698B00E58EAE /* AlbumCollectionViewCell.swift */; };
+		FA1259C72713698B00E58EAE /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1259C52713698B00E58EAE /* AlbumCollectionViewCell.xib */; };
+		FA1259CA2713761400E58EAE /* VideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1259C82713761400E58EAE /* VideosCollectionViewCell.swift */; };
+		FA1259CB2713761400E58EAE /* VideosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1259C92713761400E58EAE /* VideosCollectionViewCell.xib */; };
 		FA23EC11266350EF00695367 /* TrimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23EC0A266350EF00695367 /* TrimView.swift */; };
 		FA23EC12266350EF00695367 /* FrameImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23EC0B266350EF00695367 /* FrameImagesView.swift */; };
 		FA23EC13266350EF00695367 /* TimelineMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23EC0C266350EF00695367 /* TimelineMeasure.swift */; };
@@ -78,6 +85,13 @@
 		FA03672F25DED4E30073704D /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		FA03673025DED4E30073704D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		FA03673125DED4E30073704D /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		FA1259BD27132F9E00E58EAE /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		FA1259BF2713327E00E58EAE /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		FA1259C22713346A00E58EAE /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		FA1259C42713698B00E58EAE /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA1259C52713698B00E58EAE /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA1259C82713761400E58EAE /* VideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA1259C92713761400E58EAE /* VideosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA23EC0A266350EF00695367 /* TrimView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimView.swift; sourceTree = "<group>"; };
 		FA23EC0B266350EF00695367 /* FrameImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameImagesView.swift; sourceTree = "<group>"; };
 		FA23EC0C266350EF00695367 /* TimelineMeasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineMeasure.swift; sourceTree = "<group>"; };
@@ -171,10 +185,14 @@
 			children = (
 				FA03671B25DED3F70073704D /* SpeedCollectionViewCell.xib */,
 				FA03671C25DED3F70073704D /* SpeedCollectionViewCell.swift */,
+				FA1259C82713761400E58EAE /* VideosCollectionViewCell.swift */,
+				FA1259C92713761400E58EAE /* VideosCollectionViewCell.xib */,
 				FABA1DAC26482FE300644633 /* FeaturesCollectionViewCell.swift */,
 				FABA1DAD26482FE300644633 /* FeaturesCollectionViewCell.xib */,
 				FAE35D09268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift */,
 				FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */,
+				FA1259C42713698B00E58EAE /* AlbumCollectionViewCell.swift */,
+				FA1259C52713698B00E58EAE /* AlbumCollectionViewCell.xib */,
 			);
 			name = Cells;
 			path = ReverseVideo/Views/Cells;
@@ -289,6 +307,7 @@
 				FABA1D942646822A00644633 /* HomeViewController.swift */,
 				FABA1D952646822A00644633 /* EditorViewController.swift */,
 				FA49CAB5265EA2190090948B /* ReverseViewController.swift */,
+				FA1259BD27132F9E00E58EAE /* GalleryViewController.swift */,
 				FA49CB73266234080090948B /* SpeedViewController.swift */,
 				FA49CB762662342D0090948B /* AudioViewController.swift */,
 				89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */,
@@ -321,6 +340,7 @@
 				FA72072B26D684D2005FC86E /* FeatureType.swift */,
 				FA72072D26D68525005FC86E /* FilterType.swift */,
 				FAD8F69F27006F56009BB820 /* GlobalData.swift */,
+				FA1259C22713346A00E58EAE /* Album.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -332,6 +352,7 @@
 				FABA1DB32648305100644633 /* EditorViewModel.swift */,
 				FAE35D0726899446003FCAFB /* FilterViewModel.swift */,
 				FAD8F69926F62D8D009BB820 /* InAppPurchaseViewModel.swift */,
+				FA1259BF2713327E00E58EAE /* GalleryViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -425,11 +446,13 @@
 			files = (
 				FAD8F69726F62CCA009BB820 /* premium.mp4 in Resources */,
 				FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */,
+				FA1259CB2713761400E58EAE /* VideosCollectionViewCell.xib in Resources */,
 				FA03671D25DED3F70073704D /* SpeedCollectionViewCell.xib in Resources */,
 				FA29E8B62619A2AC001253F3 /* GoogleService-Info.plist in Resources */,
 				FAD8F69C26FFAC32009BB820 /* premium2.mp4 in Resources */,
 				FAD8F69626F62CCA009BB820 /* premium1.mp4 in Resources */,
 				FAE35D0C268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib in Resources */,
+				FA1259C72713698B00E58EAE /* AlbumCollectionViewCell.xib in Resources */,
 				FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */,
 				FA03670025DED2DE0073704D /* Main.storyboard in Resources */,
 				FABA1DAF26482FE300644633 /* FeaturesCollectionViewCell.xib in Resources */,
@@ -499,9 +522,12 @@
 				FABA1D962646822A00644633 /* RVAlertViewController.swift in Sources */,
 				FA2F87262602333F0006458C /* RVConstants.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
+				FA1259C32713346A00E58EAE /* Album.swift in Sources */,
 				FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */,
 				FAD8F69A26F62D8D009BB820 /* InAppPurchaseViewModel.swift in Sources */,
 				FA23EC12266350EF00695367 /* FrameImagesView.swift in Sources */,
+				FA1259CA2713761400E58EAE /* VideosCollectionViewCell.swift in Sources */,
+				FA1259C62713698B00E58EAE /* AlbumCollectionViewCell.swift in Sources */,
 				FABA1DB42648305100644633 /* EditorViewModel.swift in Sources */,
 				FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */,
 				FA03673225DED4E30073704D /* UIImage+Ext.swift in Sources */,
@@ -514,6 +540,7 @@
 				FA72072826CE7B89005FC86E /* LoadingViewController.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
+				FA1259C02713327E00E58EAE /* GalleryViewModel.swift in Sources */,
 				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA23EC15266350EF00695367 /* CenterLine.swift in Sources */,
 				FA72072C26D684D3005FC86E /* FeatureType.swift in Sources */,
@@ -522,6 +549,7 @@
 				FA23EC13266350EF00695367 /* TimelineMeasure.swift in Sources */,
 				FA49CB772662342D0090948B /* AudioViewController.swift in Sources */,
 				FA49CB7A2662344C0090948B /* FiltersViewController.swift in Sources */,
+				FA1259BE27132F9E00E58EAE /* GalleryViewController.swift in Sources */,
 				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
 				FABA1D982646822A00644633 /* EditorViewController.swift in Sources */,
 				FA49CB7D266234640090948B /* TextViewController.swift in Sources */,

@@ -18,7 +18,7 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     override var isSelected: Bool {
         didSet {
-            label.textColor = isSelected ? .rvOrange : .white
+            label.textColor = isSelected ? .rvThemeAlpha : .white
         }
     }
     
@@ -40,7 +40,7 @@ class ImageWithTextCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 15
         self.clipsToBounds = true
         proImageView.layer.cornerRadius = 10
-        proImageView.backgroundColor = .rvOrange
+        proImageView.backgroundColor = .rvThemeAlpha
     }
 
 }

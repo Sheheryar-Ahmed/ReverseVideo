@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCollectionViewCell" id="gTV-IL-0wX" customClass="AlbumCollectionViewCell" customModule="ReverseVideo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovo-23-59n">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nla-Ta-4d3">
+                                <rect key="frame" x="20" y="5.5" width="10" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0bp-ew-TuA"/>
+                            <constraint firstItem="nla-Ta-4d3" firstAttribute="centerY" secondItem="ovo-23-59n" secondAttribute="centerY" id="4h9-3T-FiZ"/>
+                            <constraint firstItem="nla-Ta-4d3" firstAttribute="leading" secondItem="ovo-23-59n" secondAttribute="leading" constant="20" id="ktH-WR-a5R"/>
+                            <constraint firstAttribute="trailing" secondItem="nla-Ta-4d3" secondAttribute="trailing" constant="20" id="soA-Hy-NjM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ovo-23-59n" secondAttribute="bottom" id="4hF-j9-D0F"/>
+                <constraint firstItem="ovo-23-59n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MQj-XS-5nJ"/>
+                <constraint firstItem="ovo-23-59n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zhj-BO-2zg"/>
+                <constraint firstAttribute="trailing" secondItem="ovo-23-59n" secondAttribute="trailing" id="a6K-4d-X6t"/>
+            </constraints>
+            <connections>
+                <outlet property="containerView" destination="ovo-23-59n" id="FVi-Cx-ck2"/>
+                <outlet property="label" destination="nla-Ta-4d3" id="ovL-7M-eby"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="58.928571428571423"/>
+        </collectionViewCell>
+    </objects>
+</document>

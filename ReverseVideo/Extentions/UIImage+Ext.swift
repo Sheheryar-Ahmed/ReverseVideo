@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 extension UIImage {
     
@@ -48,7 +49,22 @@ extension UIImage {
         return UIImage(named: "textIcon")
     }
     
-    // MARK: - Properties
+    // MARK: - Methods
+    class func fetchFromPhotos(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, version: PHImageRequestOptionsVersion = .current, deliveryMode: PHImageRequestOptionsDeliveryMode = .highQualityFormat, isNetworkAccessAllowed: Bool = false, progressHandler: PHAssetImageProgressHandler? = nil, completion: @escaping (UIImage?) -> ()) -> PHImageRequestID {
+        let options = PHImageRequestOptions()
+        options.version = version
+        options.deliveryMode = deliveryMode
+        
+        if isNetworkAccessAllowed {
+            options.isNetworkAccessAllowed = isNetworkAccessAllowed
+            options.progressHandler = progressHandler
+        }
+        
+        return PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { (image, _) in
+            completion(image)
+        }
+    }
+    
     // resize image with aspect ratio
      func resizeImage(newHeight: CGFloat) -> UIImage? {
         

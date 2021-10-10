@@ -42,6 +42,7 @@ class EditorViewController: UIViewController {
         setupCollectionViews()
         setupVideoPlayer(videoUrl: viewModel.originalVideoUrl, to: videoView)
         premiumIconButton.isHidden = GlobalData.isPro
+        premiumIconButton.backgroundColor = .rvThemeAlpha
     }
     
     override func viewDidAppear(_ animated: Bool) {

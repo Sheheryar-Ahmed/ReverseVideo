@@ -8,6 +8,11 @@
 import Foundation
 
 struct RVConstants {
+    
+    struct keys {
+        static var creationDate = "creationDate"
+    }
+    
      struct adIDs {
         static var testInterstitial = "ca-app-pub-3940256099942544/4411468910"
         static var testBanner = "ca-app-pub-3940256099942544/2934735716"
