@@ -19,7 +19,11 @@ class ReverseViewController: UIViewController {
     
     // MARK: - Properties
     var delegate: ReverseViewControllerDelegate?
-    var isReversed: Bool = false
+    var isReversed: Bool = false {
+        didSet {
+            reverseButton.setTitle(isReversed ? "Undo Reverse" : "Reverse Video" , for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +39,11 @@ class ReverseViewController: UIViewController {
     
     @IBAction func reverseButtonPressed() {
         isReversed.toggle()
-        reverseButton.setTitle(isReversed ? "Undo Reverse" : "Reverse Video" , for: .normal)
         delegate?.reverseButtonToggled(isReversed: isReversed)
     }
     
     // MARK: - Private Methods
-    func configureButton() {
+    private func configureButton() {
         reverseButton.layer.cornerRadius = 15
         reverseButton.setTitle(isReversed ? "Undo Reverse" : "Reverse Video" , for: .normal)
     }

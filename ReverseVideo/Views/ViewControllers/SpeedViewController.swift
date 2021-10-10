@@ -44,7 +44,7 @@ class SpeedViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    func setupCollectionView() {
+    private func setupCollectionView() {
         speedCollectionView.delegate = self
         speedCollectionView.dataSource = self
         speedCollectionView.register(UINib(nibName: SpeedCollectionViewCell.name, bundle: nil), forCellWithReuseIdentifier: SpeedCollectionViewCell.identifier)
