@@ -10,7 +10,6 @@
 		6D428760D77749FBB592A182 /* Pods_ReverseVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */; };
 		89FA20C226E8E8A40080F43F /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */; };
 		FA03670025DED2DE0073704D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39B55925D17CF900DB7D54 /* Main.storyboard */; };
-		FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671525DED3F10073704D /* CustomPickerView.swift */; };
 		FA03671825DED3F20073704D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671625DED3F10073704D /* ButtonView.swift */; };
 		FA03671D25DED3F70073704D /* SpeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA03671B25DED3F70073704D /* SpeedCollectionViewCell.xib */; };
 		FA03671E25DED3F70073704D /* SpeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03671C25DED3F70073704D /* SpeedCollectionViewCell.swift */; };
@@ -64,6 +63,16 @@
 		FAD8F6A027006F56009BB820 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8F69F27006F56009BB820 /* GlobalData.swift */; };
 		FAD8F6A22700B1BD009BB820 /* SKProduct+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */; };
 		FAD8F6A5270122E4009BB820 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8F6A4270122E4009BB820 /* StoreKit.framework */; };
+		FADB213D27180D4F008CF36C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB213C27180D4F008CF36C /* SettingsViewController.swift */; };
+		FADB213F27180D95008CF36C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB213E27180D95008CF36C /* SettingsViewModel.swift */; };
+		FADB214127180E2C008CF36C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB214027180E2C008CF36C /* SettingsTableViewCell.swift */; };
+		FADB214327180E50008CF36C /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB214227180E50008CF36C /* SettingsTableViewCell.xib */; };
+		FADB214A271811DE008CF36C /* SettingTableViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2144271811DD008CF36C /* SettingTableViewSectionHeader.xib */; };
+		FADB214B271811DE008CF36C /* SettingsTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2145271811DD008CF36C /* SettingsTableViewFooter.swift */; };
+		FADB214C271811DE008CF36C /* SettingsTableViewFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2146271811DD008CF36C /* SettingsTableViewFooter.xib */; };
+		FADB214D271811DE008CF36C /* SettingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2147271811DE008CF36C /* SettingTableViewHeader.swift */; };
+		FADB214E271811DE008CF36C /* SettingTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADB2148271811DE008CF36C /* SettingTableViewHeader.xib */; };
+		FADB214F271811DE008CF36C /* SettingTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB2149271811DE008CF36C /* SettingTableViewSectionHeader.swift */; };
 		FAE35D0826899446003FCAFB /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE35D0726899446003FCAFB /* FilterViewModel.swift */; };
 		FAE35D0B268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE35D09268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift */; };
 		FAE35D0C268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */; };
@@ -75,7 +84,6 @@
 		58ED693A27FC08077B174327 /* Pods-ReverseVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.debug.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		DF677CE6E531925AF049F238 /* Pods-ReverseVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.release.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.release.xcconfig"; sourceTree = "<group>"; };
-		FA03671525DED3F10073704D /* CustomPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		FA03671625DED3F10073704D /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FA03671B25DED3F70073704D /* SpeedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA03671C25DED3F70073704D /* SpeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +140,16 @@
 		FAD8F69F27006F56009BB820 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+Ext.swift"; sourceTree = "<group>"; };
 		FAD8F6A4270122E4009BB820 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FADB213C27180D4F008CF36C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FADB213E27180D95008CF36C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FADB214027180E2C008CF36C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		FADB214227180E50008CF36C /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		FADB2144271811DD008CF36C /* SettingTableViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewSectionHeader.xib; sourceTree = "<group>"; };
+		FADB2145271811DD008CF36C /* SettingsTableViewFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewFooter.swift; sourceTree = "<group>"; };
+		FADB2146271811DD008CF36C /* SettingsTableViewFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewFooter.xib; sourceTree = "<group>"; };
+		FADB2147271811DE008CF36C /* SettingTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewHeader.swift; sourceTree = "<group>"; };
+		FADB2148271811DE008CF36C /* SettingTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewHeader.xib; sourceTree = "<group>"; };
+		FADB2149271811DE008CF36C /* SettingTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		FAE35D0726899446003FCAFB /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		FAE35D09268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageWithTextCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -172,7 +190,12 @@
 		FA03671425DED3F10073704D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA03671525DED3F10073704D /* CustomPickerView.swift */,
+				FADB2145271811DD008CF36C /* SettingsTableViewFooter.swift */,
+				FADB2146271811DD008CF36C /* SettingsTableViewFooter.xib */,
+				FADB2147271811DE008CF36C /* SettingTableViewHeader.swift */,
+				FADB2148271811DE008CF36C /* SettingTableViewHeader.xib */,
+				FADB2149271811DE008CF36C /* SettingTableViewSectionHeader.swift */,
+				FADB2144271811DD008CF36C /* SettingTableViewSectionHeader.xib */,
 				FA03671625DED3F10073704D /* ButtonView.swift */,
 				FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */,
 			);
@@ -193,6 +216,8 @@
 				FAE35D0A268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib */,
 				FA1259C42713698B00E58EAE /* AlbumCollectionViewCell.swift */,
 				FA1259C52713698B00E58EAE /* AlbumCollectionViewCell.xib */,
+				FADB214027180E2C008CF36C /* SettingsTableViewCell.swift */,
+				FADB214227180E50008CF36C /* SettingsTableViewCell.xib */,
 			);
 			name = Cells;
 			path = ReverseVideo/Views/Cells;
@@ -308,6 +333,7 @@
 				FABA1D952646822A00644633 /* EditorViewController.swift */,
 				FA49CAB5265EA2190090948B /* ReverseViewController.swift */,
 				FA1259BD27132F9E00E58EAE /* GalleryViewController.swift */,
+				FADB213C27180D4F008CF36C /* SettingsViewController.swift */,
 				FA49CB73266234080090948B /* SpeedViewController.swift */,
 				FA49CB762662342D0090948B /* AudioViewController.swift */,
 				89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */,
@@ -350,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				FABA1DB32648305100644633 /* EditorViewModel.swift */,
+				FADB213E27180D95008CF36C /* SettingsViewModel.swift */,
 				FAE35D0726899446003FCAFB /* FilterViewModel.swift */,
 				FAD8F69926F62D8D009BB820 /* InAppPurchaseViewModel.swift */,
 				FA1259BF2713327E00E58EAE /* GalleryViewModel.swift */,
@@ -444,9 +471,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADB214C271811DE008CF36C /* SettingsTableViewFooter.xib in Resources */,
+				FADB214327180E50008CF36C /* SettingsTableViewCell.xib in Resources */,
 				FAD8F69726F62CCA009BB820 /* premium.mp4 in Resources */,
 				FA6257C2260E37E100BC4B31 /* LaunchScreen.storyboard in Resources */,
 				FA1259CB2713761400E58EAE /* VideosCollectionViewCell.xib in Resources */,
+				FADB214E271811DE008CF36C /* SettingTableViewHeader.xib in Resources */,
 				FA03671D25DED3F70073704D /* SpeedCollectionViewCell.xib in Resources */,
 				FA29E8B62619A2AC001253F3 /* GoogleService-Info.plist in Resources */,
 				FAD8F69C26FFAC32009BB820 /* premium2.mp4 in Resources */,
@@ -454,6 +484,7 @@
 				FAE35D0C268994C6003FCAFB /* ImageWithTextCollectionViewCell.xib in Resources */,
 				FA1259C72713698B00E58EAE /* AlbumCollectionViewCell.xib in Resources */,
 				FA4D938325DED85F009F1127 /* Assets.xcassets in Resources */,
+				FADB214A271811DE008CF36C /* SettingTableViewSectionHeader.xib in Resources */,
 				FA03670025DED2DE0073704D /* Main.storyboard in Resources */,
 				FABA1DAF26482FE300644633 /* FeaturesCollectionViewCell.xib in Resources */,
 			);
@@ -521,6 +552,7 @@
 				FAE35D0B268994C6003FCAFB /* ImageWithTextCollectionViewCell.swift in Sources */,
 				FABA1D962646822A00644633 /* RVAlertViewController.swift in Sources */,
 				FA2F87262602333F0006458C /* RVConstants.swift in Sources */,
+				FADB214F271811DE008CF36C /* SettingTableViewSectionHeader.swift in Sources */,
 				FA4D938625DED85F009F1127 /* SceneDelegate.swift in Sources */,
 				FA1259C32713346A00E58EAE /* Album.swift in Sources */,
 				FA03673325DED4E30073704D /* UIColor+Ext.swift in Sources */,
@@ -531,9 +563,12 @@
 				FABA1DB42648305100644633 /* EditorViewModel.swift in Sources */,
 				FA4D938525DED85F009F1127 /* AppDelegate.swift in Sources */,
 				FA03673225DED4E30073704D /* UIImage+Ext.swift in Sources */,
+				FADB214B271811DE008CF36C /* SettingsTableViewFooter.swift in Sources */,
+				FADB213D27180D4F008CF36C /* SettingsViewController.swift in Sources */,
 				FABA1D972646822A00644633 /* HomeViewController.swift in Sources */,
 				FA23EC14266350EF00695367 /* TimelineView.swift in Sources */,
 				FA23EC16266350EF00695367 /* TimelineScroller.swift in Sources */,
+				FADB213F27180D95008CF36C /* SettingsViewModel.swift in Sources */,
 				FABA1DAE26482FE300644633 /* FeaturesCollectionViewCell.swift in Sources */,
 				FA49CB74266234080090948B /* SpeedViewController.swift in Sources */,
 				FAD8F6A027006F56009BB820 /* GlobalData.swift in Sources */,
@@ -544,13 +579,14 @@
 				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA23EC15266350EF00695367 /* CenterLine.swift in Sources */,
 				FA72072C26D684D3005FC86E /* FeatureType.swift in Sources */,
+				FADB214127180E2C008CF36C /* SettingsTableViewCell.swift in Sources */,
 				FA23EC17266350EF00695367 /* VideoTimelineView.swift in Sources */,
 				FA23EC11266350EF00695367 /* TrimView.swift in Sources */,
 				FA23EC13266350EF00695367 /* TimelineMeasure.swift in Sources */,
+				FADB214D271811DE008CF36C /* SettingTableViewHeader.swift in Sources */,
 				FA49CB772662342D0090948B /* AudioViewController.swift in Sources */,
 				FA49CB7A2662344C0090948B /* FiltersViewController.swift in Sources */,
 				FA1259BE27132F9E00E58EAE /* GalleryViewController.swift in Sources */,
-				FA03671725DED3F20073704D /* CustomPickerView.swift in Sources */,
 				FABA1D982646822A00644633 /* EditorViewController.swift in Sources */,
 				FA49CB7D266234640090948B /* TextViewController.swift in Sources */,
 				FA72072E26D68525005FC86E /* FilterType.swift in Sources */,
@@ -704,7 +740,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = H5K3P8XL9A;
+				DEVELOPMENT_TEAM = BXLRY5F8R8;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -773,7 +809,7 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vyro.Testss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -788,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = H5K3P8XL9A;
+				DEVELOPMENT_TEAM = BXLRY5F8R8;
 				INFOPLIST_FILE = ReverseVideo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -857,7 +893,7 @@
 					"-weak_framework",
 					"\"WebKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheSheheryarAhmed.ReverseVideoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vyro.Testss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

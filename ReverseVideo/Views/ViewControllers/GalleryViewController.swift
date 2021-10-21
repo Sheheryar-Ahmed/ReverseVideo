@@ -13,6 +13,7 @@ import MobileCoreServices
 class GalleryViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var topViewForSafeArea: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var proButton: UIButton!
     @IBOutlet weak var videoView: UIView!
@@ -24,6 +25,10 @@ class GalleryViewController: UIViewController {
     let viewModel = GalleryViewModel()
     var avPlayer = AVPlayer()
     var playerController = AVPlayerViewController()
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -61,7 +66,8 @@ class GalleryViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func settingsButtonPresses(_ sender: UIButton) {
-        
+        let settingsVC = storyboard?.instantiateViewController(withIdentifier: SettingsViewController.identifier) as! SettingsViewController
+        self.present(settingsVC, animated: true)
     }
     
     @IBAction func premiumButtonTapped(_ sender: UIButton) {
@@ -81,7 +87,8 @@ class GalleryViewController: UIViewController {
     // MARK: - Private Methods
     private func setupUI() {
         self.view.backgroundColor = .rvGray
-        topView.backgroundColor = .black.withAlphaComponent(0.1)
+        topViewForSafeArea.backgroundColor = .rvBlack
+        topView.backgroundColor = .rvBlack
         proButton.backgroundColor = .rvThemeAlpha
         videoView.layer.cornerRadius = 10
         videoView.clipsToBounds = true
@@ -90,7 +97,7 @@ class GalleryViewController: UIViewController {
     private func setupCollectionViews() {
         // Albums collectionView
         albumsCollectionView.layer.cornerRadius = 5
-        albumsCollectionView.backgroundColor = .black.withAlphaComponent(0.1)
+        albumsCollectionView.backgroundColor = .rvBlack
         
         albumsCollectionView.delegate = self
         albumsCollectionView.dataSource = self
@@ -206,16 +213,19 @@ extension GalleryViewController: UICollectionViewDataSource, UICollectionViewDel
             
             if let asset =
                 viewModel.currentAlbum?.assets[indexPath.row] {
+            
+                cell.timeLabel.text = asset.duration.toString(precision: .custom)
+                
                 UIImage.fetchFromPhotos(asset:  asset, contentMode: .aspectFill, targetSize: CGSize(width: 200, height: 200), completion: { image in
+                    
                     cell.imageView?.image = image
                 })
                 
             }
-            
+           
             return cell
         }
     }
-    
     // Delegate Methods
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -252,3 +262,37 @@ extension GalleryViewController: UIImagePickerControllerDelegate {
 extension GalleryViewController: UINavigationControllerDelegate {
 }
 
+
+extension TimeInterval {
+
+    enum Precision {
+        case hours, minutes, seconds, milliseconds, custom
+    }
+
+    func toString(precision: Precision) -> String? {
+        guard self > 0 && self < Double.infinity else {
+            assertionFailure("wrong value")
+            return nil
+        }
+
+        let time = NSInteger(self)
+
+        let ms = Int((self.truncatingRemainder(dividingBy: 1)) * 1000)
+        let seconds = time % 60
+        let minutes = (time / 60) % 60
+        let hours = (time / 3600)
+
+        switch precision {
+        case .hours:
+            return String(format: "%0.2d", hours)
+        case .minutes:
+            return String(format: "%0.2d:%0.2d", hours, minutes)
+        case .seconds:
+            return String(format: "%0.2d:%0.2d:%0.2d", hours, minutes, seconds)
+        case .milliseconds:
+            return String(format: "%0.2d:%0.2d:%0.2d.%0.3d", hours, minutes, seconds, ms)
+        case .custom:
+            return String(format: "%0.2d:%0.2d", minutes, seconds)
+        }
+    }
+}

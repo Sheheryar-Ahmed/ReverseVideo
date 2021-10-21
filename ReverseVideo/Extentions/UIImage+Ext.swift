@@ -41,6 +41,14 @@ extension UIImage {
         return UIImage(named: "audioIcon")
     }
     
+    class var circledPlay: UIImage? {
+        return UIImage(named: "playCircled")
+    }
+    
+    class var circledPause: UIImage? {
+        return UIImage(named: "pauseCircled")
+    }
+    
     class var filterIcon: UIImage? {
         return UIImage(named: "filterIcon")
     }
@@ -50,7 +58,7 @@ extension UIImage {
     }
     
     // MARK: - Methods
-    class func fetchFromPhotos(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, version: PHImageRequestOptionsVersion = .current, deliveryMode: PHImageRequestOptionsDeliveryMode = .highQualityFormat, isNetworkAccessAllowed: Bool = false, progressHandler: PHAssetImageProgressHandler? = nil, completion: @escaping (UIImage?) -> ()) -> PHImageRequestID {
+    class func fetchFromPhotos(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, version: PHImageRequestOptionsVersion = .current, deliveryMode: PHImageRequestOptionsDeliveryMode = .highQualityFormat, isNetworkAccessAllowed: Bool = false, progressHandler: PHAssetImageProgressHandler? = nil, completion: @escaping (UIImage?) -> ()) {
         let options = PHImageRequestOptions()
         options.version = version
         options.deliveryMode = deliveryMode
@@ -60,7 +68,7 @@ extension UIImage {
             options.progressHandler = progressHandler
         }
         
-        return PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { (image, _) in
+         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { (image, _) in
             completion(image)
         }
     }

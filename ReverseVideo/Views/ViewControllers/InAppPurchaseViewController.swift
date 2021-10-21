@@ -125,6 +125,7 @@ class InAppPurchaseViewController: UIViewController {
         showLoadingVC()
         Purchases.shared.restoreTransactions { purchaserInfo, error in
             self.hideLoadingVC()
+            
             if purchaserInfo?.entitlements.all["pro"]?.isActive == true {
                 // Unlock that great "pro" content
             } else if let error = error {

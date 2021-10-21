@@ -12,6 +12,7 @@ class VideosCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override var isSelected: Bool {
         didSet {
