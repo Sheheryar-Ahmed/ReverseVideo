@@ -44,7 +44,7 @@ class SpeedViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    func setupCollectionView() {
+    private func setupCollectionView() {
         speedCollectionView.delegate = self
         speedCollectionView.dataSource = self
         speedCollectionView.register(UINib(nibName: SpeedCollectionViewCell.name, bundle: nil), forCellWithReuseIdentifier: SpeedCollectionViewCell.identifier)
@@ -74,8 +74,13 @@ extension SpeedViewController: UICollectionViewDelegate, UICollectionViewDataSou
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
         }
         
-        currentSpeed = speedArray[indexPath.row]
-        delegate?.didSelectSpeed(value: currentSpeed)        
+        if GlobalData.isPro || speedArray[indexPath.row] == 1 || speedArray[indexPath.row] == 0.75 {
+            currentSpeed = speedArray[indexPath.row]
+            delegate?.didSelectSpeed(value: currentSpeed)
+        } else {
+            self.presentInAppViewController()
+            collectionView.selectItem(at: IndexPath(row: 3, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        }
     }
     
     // FlowLayout Methods
@@ -91,8 +96,13 @@ extension SpeedViewController: UIScrollViewDelegate {
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         guard let visibleIndexPath = speedCollectionView.indexPathForItem(at: visiblePoint) else { return }
 
-        speedCollectionView.selectItem(at: visibleIndexPath, animated: false, scrollPosition: .centeredVertically)
-        currentSpeed = speedArray[visibleIndexPath.row]
-        delegate?.didSelectSpeed(value: currentSpeed)
+        if GlobalData.isPro || speedArray[visibleIndexPath.row] == 1 || speedArray[visibleIndexPath.row] == 0.75 {
+            speedCollectionView.selectItem(at: visibleIndexPath, animated: false, scrollPosition: .centeredVertically)
+            currentSpeed = speedArray[visibleIndexPath.row]
+            delegate?.didSelectSpeed(value: currentSpeed)
+        } else {
+            self.presentInAppViewController()
+            speedCollectionView.selectItem(at: IndexPath(row: 3, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        }
     }
 }

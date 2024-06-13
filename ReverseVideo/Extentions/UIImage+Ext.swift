@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 extension UIImage {
     
@@ -40,6 +41,14 @@ extension UIImage {
         return UIImage(named: "audioIcon")
     }
     
+    class var circledPlay: UIImage? {
+        return UIImage(named: "playCircled")
+    }
+    
+    class var circledPause: UIImage? {
+        return UIImage(named: "pauseCircled")
+    }
+    
     class var filterIcon: UIImage? {
         return UIImage(named: "filterIcon")
     }
@@ -48,7 +57,22 @@ extension UIImage {
         return UIImage(named: "textIcon")
     }
     
-    // MARK: - Properties
+    // MARK: - Methods
+    class func fetchFromPhotos(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize, version: PHImageRequestOptionsVersion = .current, deliveryMode: PHImageRequestOptionsDeliveryMode = .highQualityFormat, isNetworkAccessAllowed: Bool = false, progressHandler: PHAssetImageProgressHandler? = nil, completion: @escaping (UIImage?) -> ()) {
+        let options = PHImageRequestOptions()
+        options.version = version
+        options.deliveryMode = deliveryMode
+        
+        if isNetworkAccessAllowed {
+            options.isNetworkAccessAllowed = isNetworkAccessAllowed
+            options.progressHandler = progressHandler
+        }
+        
+         PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { (image, _) in
+            completion(image)
+        }
+    }
+    
     // resize image with aspect ratio
      func resizeImage(newHeight: CGFloat) -> UIImage? {
         

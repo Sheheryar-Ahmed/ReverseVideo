@@ -18,7 +18,7 @@ class ActivityIndicatorManager {
             return
         }
         
-        activityIndicatorView = NVActivityIndicatorView(frame: view.bounds, type: style, color: .rvOrange, padding: view.frame.width / 2.5)
+        activityIndicatorView = NVActivityIndicatorView(frame: view.bounds, type: style, color: .rvThemeAlpha, padding: view.frame.width / 2.5)
         
         guard let aiv = activityIndicatorView else {
             return

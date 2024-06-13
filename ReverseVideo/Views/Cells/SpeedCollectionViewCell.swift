@@ -17,8 +17,8 @@ class SpeedCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     override var isSelected: Bool {
         didSet {
-            label.textColor = isSelected ? .rvOrange : .white
-            lineImageView.tintColor = isSelected ? .rvOrange : .white
+            label.textColor = isSelected ? .rvThemeAlpha : .white
+            lineImageView.tintColor = isSelected ? .rvThemeAlpha : .white
             lineImageTopConstraint.constant = isSelected ? 0.0 : 10.0
             
             UIView.animate(withDuration: 0.3) {

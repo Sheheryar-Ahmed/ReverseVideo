@@ -65,6 +65,7 @@ class RVAlertViewController: UIViewController {
     private func configureImageView() {
         containerView.addSubview(imageView)
         imageView.image = UIImage.doneIcon
+        imageView.tintColor = .rvThemeAlpha
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -81,7 +82,7 @@ class RVAlertViewController: UIViewController {
         messageLabel.numberOfLines = 4
 //        messageLabel.font = UIFont.lato?.withSize(17)
         messageLabel.textAlignment = .center
-        messageLabel.textColor = UIColor.rvOrange
+        messageLabel.textColor = UIColor.rvThemeAlpha
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             messageLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),

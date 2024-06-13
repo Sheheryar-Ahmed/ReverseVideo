@@ -10,15 +10,15 @@ import UIKit
 extension UIColor {
     
     // MARK: - Properties
-    class var rvBlack: UIColor? {
+    class var rvBlack: UIColor {
         return fromHex("141414")
     }
-    class var rvOrange: UIColor? {
-        return fromHex("F15922")
+    class var rvThemeAlpha: UIColor {
+        return fromHex("6D1FFF") // b4c1fe
     }
     
-    class var rvGray: UIColor? {
-        return fromHex("#424242")
+    class var rvGray: UIColor {
+        return fromHex("1E1E1E")
     }
     
     // MARK: - Helper Methods

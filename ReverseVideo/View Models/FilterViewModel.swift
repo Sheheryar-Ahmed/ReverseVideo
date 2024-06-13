@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class FilterViewModel {
-    let filterTypes: [FilterType] = [.PhotoEffectChrome, .PhotoEffectFade, .PhotoEffectInstant, .ColorMonochrome, .PhotoEffectMono,.PhotoEffectNoir, .PhotoEffectProcess, .PhotoEffectTonal, .PhotoEffectTransfer, .SepiaTone]
+    let filterTypes: [FilterType] = [.PhotoEffectChrome, .PhotoEffectFade, .PhotoEffectInstant, .PhotoEffectMono,.PhotoEffectNoir, .PhotoEffectTonal, .PhotoEffectProcess, .PhotoEffectTransfer, .SepiaTone, .ColorMonochrome]
     
     func cgImage(from ciImage: CIImage) -> CGImage? {
         let context = CIContext(options: nil)

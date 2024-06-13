@@ -8,6 +8,11 @@
 import Foundation
 
 struct RVConstants {
+    
+    struct keys {
+        static var creationDate = "creationDate"
+    }
+    
      struct adIDs {
         static var testInterstitial = "ca-app-pub-3940256099942544/4411468910"
         static var testBanner = "ca-app-pub-3940256099942544/2934735716"
@@ -16,7 +21,7 @@ struct RVConstants {
             #if DEBUG
             return testInterstitial
             #else
-            return "ca-app-pub-3489350166648651/2145047881"
+            return ""
             #endif
         }
         
@@ -24,8 +29,22 @@ struct RVConstants {
             #if DEBUG
             return testBanner
             #else
-            return "ca-app-pub-3489350166648651/6366120657"
+            return ""
             #endif
         }
      }
+    
+    struct InAppPurchase {
+        static let sharedSecret = ""
+        static let revenueCatApiKey = ""
+        
+        static let weeklyPackageID = ""
+        static let monthlyPackageID = ""
+        static let yearlyPackageID = ""
+    }
+    
+    struct URLs {
+        static let privacyPolicy = "https://sheheryarahmed.com/reverse-video-privacy-policy/"
+        static let termsOfUse = "https://sheheryarahmed.com/reverse-video-privacy-policy/"
+    }
 }
