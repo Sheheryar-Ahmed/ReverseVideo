@@ -48,8 +48,9 @@ class GalleryViewController: UIViewController {
             isFirstTime = false
             setupCollectionViews()
             
-            albumsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .centeredVertically)
-            videosCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+            
+//            albumsCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .centeredVertically)
+//            videosCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .centeredHorizontally)
             
             if let asset = viewModel.currentAlbum?.assets.firstObject {
                 
