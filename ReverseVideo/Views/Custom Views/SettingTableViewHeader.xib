@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SettingTableViewHeader" customModule="ReverseVideo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Setting_image" translatesAutoresizingMaskIntoConstraints="NO" id="KsX-y8-4ph">
+                    <rect key="frame" x="10" y="28" width="394" height="212"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="212" id="whj-fR-tEr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUt-oV-sqO">
+                    <rect key="frame" x="26" y="169.5" width="144" height="20.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Reverse Video Pro:">
+                            <attributes>
+                                <color key="NSColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-jh-D6S">
+                    <rect key="frame" x="26" y="199" width="105" height="30"/>
+                    <color key="backgroundColor" red="0.29803921568627451" green="0.54509803921568623" blue="0.96078431372549022" alpha="0.24720639598612881" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3zC-8J-OP9"/>
+                        <constraint firstAttribute="width" constant="105" id="Chn-s1-J5G"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                    <state key="normal" title="Upgrade Plan">
+                        <color key="titleColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="continueButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="TwR-WR-IJ0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UUt-oV-sqO" secondAttribute="bottom" constant="50" id="1d3-Zo-puv"/>
+                <constraint firstItem="4Ea-jh-D6S" firstAttribute="leading" secondItem="UUt-oV-sqO" secondAttribute="leading" id="25N-w2-xAC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4Ea-jh-D6S" secondAttribute="bottom" constant="11" id="7e9-OP-j40"/>
+                <constraint firstItem="UUt-oV-sqO" firstAttribute="leading" secondItem="KsX-y8-4ph" secondAttribute="leading" constant="16" id="UQW-1x-DIR"/>
+                <constraint firstItem="KsX-y8-4ph" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="Y53-Ee-EXV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KsX-y8-4ph" secondAttribute="trailing" constant="10" id="oQh-P9-Lrr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KsX-y8-4ph" secondAttribute="bottom" id="sHA-GD-Erb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="continueButton" destination="4Ea-jh-D6S" id="eDy-TL-8h2"/>
+                <outlet property="imageView" destination="KsX-y8-4ph" id="uFK-DN-G8Q"/>
+                <outlet property="titleLabel" destination="UUt-oV-sqO" id="aPO-xc-Rpq"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="92"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Setting_image" width="1420" height="848"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

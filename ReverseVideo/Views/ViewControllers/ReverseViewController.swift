@@ -40,8 +40,9 @@ class ReverseViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    func configureButton() {
+    private func configureButton() {
         reverseButton.layer.cornerRadius = 15
+        reverseButton.backgroundColor = .rvThemeAlpha
         reverseButton.setTitle(isReversed ? "Undo Reverse" : "Reverse Video" , for: .normal)
     }
 }

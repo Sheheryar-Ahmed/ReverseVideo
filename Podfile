@@ -10,4 +10,5 @@ target 'ReverseVideo' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'Purchases'
 end
