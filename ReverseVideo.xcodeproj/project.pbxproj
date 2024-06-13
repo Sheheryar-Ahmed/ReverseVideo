@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -309,7 +309,6 @@
 				FABA1DB22648302F00644633 /* View Models */,
 				FA153A9625DEC6D7006856F4 /* Views */,
 				FA72072A26D684AF005FC86E /* Models */,
-				FA39B56125D17CFD00DB7D54 /* Info.plist */,
 			);
 			path = ReverseVideo;
 			sourceTree = "<group>";
@@ -317,6 +316,7 @@
 		FA4D937D25DED85F009F1127 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				FA39B56125D17CFD00DB7D54 /* Info.plist */,
 				FA4D937F25DED85F009F1127 /* LaunchScreen.storyboard */,
 				FA29E8B52619A2AC001253F3 /* GoogleService-Info.plist */,
 				FA4D938125DED85F009F1127 /* AppDelegate.swift */,
@@ -741,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BXLRY5F8R8;
-				INFOPLIST_FILE = ReverseVideo/Info.plist;
+				INFOPLIST_FILE = ReverseVideo/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,7 +825,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = BXLRY5F8R8;
-				INFOPLIST_FILE = ReverseVideo/Info.plist;
+				INFOPLIST_FILE = ReverseVideo/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
